@@ -35,7 +35,7 @@ public class ServletContacto extends HttpServlet {
 	    	requestDispatcher = request.getRequestDispatcher("ServletListarUsuario.java");
 	      }else
 	        requestDispatcher = request.getRequestDispatcher("login.jsp");
-	    }
+	}
 		
 	
     
