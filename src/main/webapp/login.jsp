@@ -5,18 +5,18 @@
 	<head>
 		<meta charset="UTF-8">
 		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  rel="stylesheet">
-		<link rel="stylesheet" href="css/styles.css">
-		
+	<link rel="stylesheet" href="css/styles.css">
+			
 		<title>Login</title>
 	</head>
-	<body>
+	<body class="fondo">
 		<div class="container">
 			<h1 class="text-center">Inicie Sesión</h1>
 		
 	   	<!-- Codigo del Formulario Login -->
 			 <div class="row mt-5">
 			    <div class="col-4 offset-4">
-			      <form action="ServletAuth" method="post" >
+			      <form class ="fondo-form"action="ServletAuth" method="post" >
 			        <div class="mb-3">
 			          <label for="exampleInputEmail1" class="form-label">Usuario</label>
 			          <input
