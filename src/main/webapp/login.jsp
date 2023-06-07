@@ -16,7 +16,7 @@
 	   	<!-- Codigo del Formulario Login -->
 			 <div class="row mt-5">
 			    <div class="col-4 offset-4">
-			      <form class ="fondo-form"action="ServletAuth" method="post" >
+			      <form class ="fondo-form"action="ServletLogin" method="post" >
 			        <div class="mb-3">
 			          <label for="exampleInputEmail1" class="form-label">Usuario</label>
 			          <input
@@ -40,7 +40,10 @@
 			    
 			        </div>
 			        <div class="d-grid gap-2">
-			          <button type="submit" class="btn btn-success">Acceder</button>
+			          <button type="submit" class="btn btn-primary">Acceder</button>
+			        </div>
+			         <div class="d-grid gap-2">
+			          <button class="btn btn-danger" onclick="window.location.href='index.jsp'">Volver al inicio</button>
 			        </div>
 			      </form>
 			
