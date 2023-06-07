@@ -26,15 +26,7 @@ public class ServletContacto extends HttpServlet {
     }
     
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	RequestDispatcher requestDispatcher;
-    	response.sendRedirect("contacto.jsp");
-		HttpSession session = request.getSession();
-		if(session != null) {
-			System.out.println(session);
-	    	requestDispatcher = request.getRequestDispatcher("ServletCrearUsuario.java");
-	    	requestDispatcher = request.getRequestDispatcher("ServletListarUsuario.java");
-	      }else
-	        requestDispatcher = request.getRequestDispatcher("login.jsp");
+    	
 	}
 		
 	
