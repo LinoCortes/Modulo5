@@ -1,11 +1,14 @@
 package cl.ejerciciogrupal1.controllers.servlets;
 
 import java.io.IOException;
+
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ServletContacto
@@ -23,8 +26,18 @@ public class ServletContacto extends HttpServlet {
     }
     
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("contacto.jsp");
-	}
+    	RequestDispatcher requestDispatcher;
+    	response.sendRedirect("contacto.jsp");
+		HttpSession session = request.getSession();
+		if(session != null) {
+			System.out.println(session);
+	    	requestDispatcher = request.getRequestDispatcher("ServletCrearUsuario.java");
+	    	requestDispatcher = request.getRequestDispatcher("ServletListarUsuario.java");
+	      }else
+	        requestDispatcher = request.getRequestDispatcher("login.jsp");
+	    }
+		
+	
     
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
