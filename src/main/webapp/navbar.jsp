@@ -1,7 +1,11 @@
 <%@ page session="true" %>
 <nav class="navbar navbar-expand-lg bg-dark border-bottom border-bottom-dark" data-bs-theme="dark">
   <div class="container-fluid">
+<<<<<<< HEAD
+    <a class="navbar-brand" href="#">Bootcamp</a>
+=======
     <a class="navbar-brand" href="home.jsp">Bootcamp</a>
+>>>>>>> 595c00ae37967e7d3c328cd6bd221afc994816d6
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -34,7 +38,11 @@
     	<p class="text-white-50 mx-3 my-2"> Bienvenido <span class="fw-bold text-capitalize">${sessionScope.usuario}</span></p>
 
 	    <form class="form-inline" action="ServletLogout" method="post">
+<<<<<<< HEAD
+	        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cerrar sesión</button>
+=======
 	        <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cerrar sesiï¿½n</button>
+>>>>>>> 595c00ae37967e7d3c328cd6bd221afc994816d6
 	    </form>
 		</div>
      
