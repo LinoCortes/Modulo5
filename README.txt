@@ -1,0 +1,1 @@
+Se realiza protección de pathing para que en caso de no haber una sesión iniciada con las credenciales especificadas no se pueda ingresar a contacto, listar capacitación ni crear capacitación. Según se solicita en ejercicio, no se agrega código html para desplegar contenido en los 3 jsp antes mencionados
