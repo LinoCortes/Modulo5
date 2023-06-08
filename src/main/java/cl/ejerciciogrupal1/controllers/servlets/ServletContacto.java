@@ -16,7 +16,7 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/ServletContacto")
 public class ServletContacto extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    
     /**
      * @see HttpServlet#HttpServlet()
      */
@@ -26,7 +26,7 @@ public class ServletContacto extends HttpServlet {
     }
     
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	
+    	response.sendRedirect("contacto.jsp");
 	}
 		
 	

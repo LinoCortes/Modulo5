@@ -42,7 +42,7 @@
 			        <div class="d-grid gap-2">
 			          <button type="submit" class="btn btn-primary">Acceder</button>
 			        </div>
-			         <div class="d-grid gap-2">
+			         <div class="d-grid gap-2 mt-3">
 			          <button class="btn btn-danger" onclick="window.location.href='index.jsp'">Volver al inicio</button>
 			        </div>
 			      </form>
