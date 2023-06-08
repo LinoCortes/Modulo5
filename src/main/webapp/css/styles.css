@@ -7,4 +7,10 @@
 	padding: 3rem;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-}    
+}
+
+.fondoCapacitacion {
+	background-color: white;
+	background-image: radial-gradient(circle at 50% 50%, white 0%, white 50%, #FAFAFA 51%, #FAFAFA 100%);
+	}
+  
