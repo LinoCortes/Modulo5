@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Ejercicio Grupal 2 Módulo 5
+ * Ejercicio Grupal 3 Módulo 5
  * 
  * Integrantes:
  * 		Lino Cortés
