@@ -6,7 +6,7 @@
 <meta charset="ISO-8859-1">
 	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"  rel="stylesheet">
 	<link rel="stylesheet" href="css/styles.css">
-<title>Listar Capacitaciï¿½n</title>
+<title>Listar Capacitación</title>
 </head>
 <body class="fondoCapacitacion">
 	<jsp:include page="navbarCliente.jsp" />
@@ -15,7 +15,7 @@
 
 	   <div class="container">
         <h2>Llena los siguientes campos para listar las capacitaciones requeridas.</h2>
-        <form id="capacitacionForm">
+        <form id="capacitacionForm" class="fondoFormularioCapacitacion">
             <div class="mb-3">
                 <label for="capacitacionId" class="form-label">Id capacitación/opcional</label>
                 <input type="text" class="form-control" id="capacitacionId" name="capacitacionId">

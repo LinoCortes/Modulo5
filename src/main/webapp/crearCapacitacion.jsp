@@ -6,14 +6,14 @@
 <meta charset="ISO-8859-1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/styles.css">
-<title>Insert title here</title>
+<title>Creador Capacitaciones</title>
 </head>
 <body class="fondoCapacitacion">
 	<jsp:include page="navbarCliente.jsp" />
 	<h1 class="text-center">Crear Capacitación</h1>
 
 	    <div class="container centered-form">
-        <form class="custom-form">
+        <form class="custom-form fondoFormularioCapacitacion">
             <div class="mb-3">
                 <label for="capacitacionId" class="form-label">Id capacitación</label>
                 <input type="text" class="form-control" id="capacitacionId" name="capacitacionId">
