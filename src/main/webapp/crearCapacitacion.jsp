@@ -9,7 +9,7 @@
 <title>Insert title here</title>
 </head>
 <body class="fondoCapacitacion">
-	<jsp:include page="navbar.jsp" />
+	<jsp:include page="navbarCliente.jsp" />
 	<h1 class="text-center">Crear Capacitación</h1>
 
 	    <div class="container centered-form">

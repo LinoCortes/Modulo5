@@ -27,8 +27,4 @@ public class Administrativo extends Usuario{
 	public void setExperienciaPrevia(String experienciaPrevia) {
 		this.experienciaPrevia = experienciaPrevia;
 	}
-	
-	
-	
-	
 }

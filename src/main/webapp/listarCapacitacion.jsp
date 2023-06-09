@@ -9,7 +9,7 @@
 <title>Listar Capacitaci�n</title>
 </head>
 <body class="fondoCapacitacion">
-	<jsp:include page="navbar.jsp" />
+	<jsp:include page="navbarCliente.jsp" />
 	<h1 class="text-center">Listar Capacitaciones</h1>
 
 
