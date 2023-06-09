@@ -1,4 +1,4 @@
-package cl.ejerciciogrupal1.filter;
+package filter;
 
 import java.io.IOException;
 

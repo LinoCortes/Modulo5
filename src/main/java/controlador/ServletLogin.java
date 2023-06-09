@@ -1,4 +1,4 @@
-package cl.ejerciciogrupal1.controllers.servlets;
+package controlador;
 
 import java.io.IOException;
 
