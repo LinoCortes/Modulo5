@@ -14,10 +14,6 @@
 	width:100%;
 	background-color: white;
 	background-image: radial-gradient(circle at 50% 50%, white 0%, white 50%, #FAFAFA 51%, #FAFAFA 100%);
-	background-image: url('../img/fondo.jpg');
-	background-size: cover;
-	background-repeat: no-repeat;
-	background-position: center;
 	}
 
 	.fondoFormularioCapacitacion {
