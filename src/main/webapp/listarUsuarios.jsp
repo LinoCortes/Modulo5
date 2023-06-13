@@ -9,12 +9,11 @@
 <title>Listar Usuarios</title>
 </head>
 <body class="fondoCapacitacion">
-	<jsp:include page="navbar.jsp" />
+	<jsp:include page="navbarLogin.jsp" />
 	<h1 class="text-center">Listar Usuarios</h1>
 
 
 	   <div class="container">
-        <h2>Llena los siguientes campos para listar a los usuarios.</h2>
         <form id="capacitacionForm">
             <div class="mb-3">
                 <label for="capacitacionId" class="form-label">Rut</label>

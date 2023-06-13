@@ -10,7 +10,7 @@
 <title>Contacto</title>
 </head>
 <body>
-	<jsp:include page="navbarCliente.jsp" />
+	<jsp:include page="navbarLogin.jsp" />
   <h1>Formulario de Contacto</h1>
   <div class="container">
     <form action="#" method="post">

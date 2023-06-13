@@ -11,7 +11,7 @@
 <title>Listar Capacitación</title>
 </head>
 <body class="fondoCapacitacion">
-	<jsp:include page="navbarCliente.jsp" />
+	<jsp:include page="navbarLogin.jsp" />
 	<h1 class="text-center">Listar Capacitaciones</h1>
 
 

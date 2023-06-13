@@ -9,7 +9,7 @@
 <title>Creador Capacitaciones</title>
 </head>
 <body class="fondoCapacitacion">
-	<jsp:include page="navbarCliente.jsp" />
+	<jsp:include page="navbarLogin.jsp" />
 	<h1 class="text-center">Crear Capacitación</h1>
 
 	    <div class="container centered-form">
