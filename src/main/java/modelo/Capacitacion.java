@@ -1,7 +1,8 @@
 package modelo;
+import java.io.Serializable;
 
-public class Capacitacion {
-	int identificador,duracion,cantidadAsistentes;
+public class Capacitacion implements Serializable{
+	int identificador,duracion,cantidadAsistentes,id;
 	String tematica, rutCliente,dia,hora,lugar;
 	
 	
@@ -10,9 +11,10 @@ public class Capacitacion {
 	    
 	}	
 
-	public Capacitacion(int identificador, int duracion, int cantidadAsistentes, String rut,
+	public Capacitacion(int id,int identificador, int duracion, int cantidadAsistentes, String rut,
 			String tematica, String dia, String hora, String lugar) {
-		    this.identificador=identificador;
+		    this.id=id;
+			this.identificador=identificador;
 		    this.duracion = duracion;
 		    this.cantidadAsistentes = cantidadAsistentes;
 		    this.tematica = tematica;
@@ -23,6 +25,14 @@ public class Capacitacion {
     }
 	
 	
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	//se crean los setters.
 	public void setIdentificador(int identificador) {
 		this.identificador=identificador;	
@@ -77,5 +87,14 @@ public class Capacitacion {
 	public String getTematica() {
 		return tematica;
 	}
+
+	@Override
+	public String toString() {
+		return "Capacitacion [identificador=" + identificador + ", duracion=" + duracion + ", cantidadAsistentes="
+				+ cantidadAsistentes + ", id=" + id + ", tematica=" + tematica + ", rutCliente=" + rutCliente + ", dia="
+				+ dia + ", hora=" + hora + ", lugar=" + lugar + "]";
+	}
+	
+	private static final long serialVersionUID = 1L;
 	
 }
