@@ -5,35 +5,50 @@
 <head>
 <meta charset="ISO-8859-1">
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
-	<link rel="stylesheet" href="css/styles.css">
-<title>Insert title here</title>
+	<link rel="stylesheet" href="css/stylesform.css">
+<title>Creador Capacitaciones</title>
 </head>
 <body class="fondoCapacitacion">
-	<jsp:include page="navbar.jsp" />
+	<jsp:include page="navbarLogin.jsp" />
 	<h1 class="text-center">Crear Capacitación</h1>
 
 	    <div class="container centered-form">
-        <form class="custom-form">
+        <form action = "ServletCrearCapacitacion" method = "post">
             <div class="mb-3">
-                <label for="capacitacionId" class="form-label">Id capacitación</label>
-                <input type="text" class="form-control" id="capacitacionId" name="capacitacionId">
+                <label for="capacitacionId" class="form-label">Identificador</label>
+                <input type="text" class="form-control" id="identificador" name="identificador">
             </div>
             <div class="mb-3">
-                <label for="horarioCapacitacion" class="form-label">Horario de la capacitación</label>
-                <input type="time" class="form-control" id="horarioCapacitacion" name="horarioCapacitacion">
+                <label for="duracion" class="form-label">Duracion de la Capacitación</label>
+                <input type="text" class="form-control" id="duracion" name="duracion">
             </div>
             <div class="mb-3">
-                <label for="duracionCapacitacion" class="form-label">Duración en minutos de la capacitación</label>
-                <input type="number" class="form-control" id="duracionCapacitacion" name="duracionCapacitacion">
+                <label for="cantidadAsistentes" class="form-label">Cantidad Asistentes de la Capacitación</label>
+                <input type="text" class="form-control" id="cantidadAsistentes" name="cantidadAsistentes">
             </div>
             <div class="mb-3">
-                <label for="fechaCapacitacion" class="form-label">Fecha de realización</label>
-                <input type="date" class="form-control" id="fechaCapacitacion" name="fechaCapacitacion">
+                <label for="rut_cliente" class="form-label">Rut Cliente</label>
+                <input type="text" class="form-control" id="rutCliente" name="rutCliente">
             </div>
             <div class="mb-3">
-                <label for="lugarCapacitacion" class="form-label">Lugar de la capacitación</label>
-                <input type="text" class="form-control" id="lugarCapacitacion" name="lugarCapacitacion">
+                <label for="tematica" class="form-label">Tematica de la Capacitación </label>
+                <input type="text" class="form-control" id="tematica" name="tematica">
             </div>
+             <div class="mb-3">
+                <label for="lugar" class="form-label">Lugar de la Capacitación</label>
+                <input type="text" class="form-control" id="lugar" name="lugar">
+            </div>
+            <div class="mb-3">
+                <label for="Dia" class="form-label">Dia de la Capacitación</label>
+                <input type="text" class="form-control" id="dia" name="dia">
+            </div>
+            
+            <div class="mb-3">
+                <label for="hora" class ="form-label">Horario de la Capacitación</label>
+                <input type="text" class="form-control" id="hora" name="hora">
+            </div>
+          
+          
             <button type="submit" class="btn btn-primary">Crear</button>
         </form>
     </div>
