@@ -20,7 +20,7 @@
             </div>
             <div class="mb-3">
                 <label for="horarioCapacitacion" class="form-label">Rut</label>
-                <input type="time" class="form-control" id="Rut" name="Rut">
+                <input type="text" class="form-control" id="Rut" name="Rut">
             </div>
             <div class="mb-3">
                 <label for="duracionCapacitacion" class="form-label">Fecha de nacimiento</label>
