@@ -9,4 +9,7 @@ public interface ICapacitacionesControlador {
 	  public List<Capacitacion> findAllCapacitacion();
 	  
 	  
+	  public Capacitacion crearCapacitaciones(Capacitacion capacitacion); 
+		  
+
 }

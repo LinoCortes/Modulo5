@@ -1,11 +1,16 @@
 package controlador;
 
 import java.io.IOException;
+import java.sql.SQLException;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import modelo.Capacitacion;
+import controlador.CapacitacionControlador;
 
 /**
  * Servlet implementation class ServletCrearCapacitacion
@@ -23,24 +28,38 @@ public class ServletCrearCapacitacion extends HttpServlet {
     }
     
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.sendRedirect("crearCapacitacion.jsp");
-	}
-    
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-	}
+    	   // Obtener los parámetros de la solicitud POST
+    			System.out.println("Dentro de crear capacitaicon");
+    	    	int identificador = Integer.parseInt(request.getParameter("identificador"));
+    			int duracion = Integer.parseInt(request.getParameter("duracion"));
+    			int cantidadAsistentes = Integer.parseInt(request.getParameter("cantidadAsistentes"));
+    			String rutCliente = request.getParameter("rutCliente");
+    			String tematica = request.getParameter("tematica");
+    			String dia = request.getParameter("dia");
+    			String hora = request.getParameter("hora");
+    			String lugar = request.getParameter("lugar");
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
-	}
+    			// Crear el objeto Capacitacion
+    			Capacitacion capacitacion = new Capacitacion();
+    			capacitacion.setIdentificador(identificador);
+    			capacitacion.setDuracion(duracion);
+    			capacitacion.setCantidadAsistentes(cantidadAsistentes);
+    			capacitacion.setRutCliente(rutCliente);
+    			capacitacion.setTematica(tematica);
+    			capacitacion.setDia(dia);
+    			capacitacion.setHora(hora);
+    			capacitacion.setLugar(lugar);
 
+    			// Insertar la capacitación en la base de datos
+    			Capacitacion crearCapacitaciones  = new Capacitacion();
+    			CapacitacionControlador capacitacionControlador = new CapacitacionControlador();
+    			capacitacionControlador.crearCapacitaciones(capacitacion);
+
+    			// Redirigir a una página de éxito o mostrar un mensaje de éxito
+    			response.sendRedirect("listarCapacitacion.jsp");
+    	    
+    	    }  	
+       
 }
+   
+

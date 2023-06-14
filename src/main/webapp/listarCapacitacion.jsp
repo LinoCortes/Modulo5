@@ -27,8 +27,8 @@
                         <th scope="col">Identificador</th>
                         <th scope="col">Duracion</th>
                         <th scope="col">Asistentes</th>
-                        <th scope="col">Tematica</th>
-                      	<th scope="col">rut</th>
+                        <th scope="col">Rut</th>
+                      	<th scope="col">Tematica</th>
                       	<th scope="col">Dia</th>
                       	<th scope="col">Hora</th>
                       	<th scope="col">Lugar</th>
@@ -37,6 +37,7 @@
                     <tbody class="table-group-divider">
                     <!-- el ciclo for de java -->
                     <% List<Capacitacion> capacitaciones = (List<Capacitacion>)request.getAttribute("capacitaciones");
+                    	System.out.println(capacitaciones);
                     	if(capacitaciones != null) {
                     	  for(Capacitacion s: capacitaciones ) {
                     %>

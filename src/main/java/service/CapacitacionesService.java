@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import conexion.DBConnection;
 import modelo.Capacitacion;
 
@@ -25,7 +26,7 @@ public class CapacitacionesService {
       
       while(rs.next()) {
     	int id = rs.getInt("id");
-        int identificador = rs.getInt("identificador");
+    	int identificador = rs.getInt("identificador");
         int duracion = rs.getInt("duracion"); 
         int cantidadAsistentes = rs.getInt("cantidadAsistentes");
         String tematica = rs.getString("tematica");
@@ -35,6 +36,7 @@ public class CapacitacionesService {
         String lugar = rs.getString("lugar");
         Capacitacion capacitacion = new Capacitacion(id,identificador, duracion, cantidadAsistentes, tematica,
         rutCliente, dia, hora, lugar);
+        System.out.println(capacitacion);
         
        capacitaciones.add(capacitacion);
         // System.out.println(students);
@@ -45,6 +47,33 @@ public class CapacitacionesService {
     }
     return capacitaciones;
   }
+  
+  
+  
+  public Capacitacion crearCapacitaciones(Capacitacion capacitacion) {
+	    DBConnection conexion = DBConnection.getInstance();
+	    System.out.println("Dentro crear");
+	    String sql = "INSERT INTO capacitaciones (identificador, duracion, cantidadAsistentes, rutCliente, tematica, dia, hora, lugar) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+	    
+	    try {
+	      PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
+	      statement.setInt(1, capacitacion.getIdentificador());
+          statement.setInt(2, capacitacion.getDuracion());
+          statement.setInt(3, capacitacion.getCantidadAsistentes());
+          statement.setString(4, capacitacion.getRutCliente());
+          statement.setString(5, capacitacion.getTematica());
+          statement.setString(6, capacitacion.getDia());
+          statement.setString(7, capacitacion.getHora());
+          statement.setString(8, capacitacion.getLugar());
+
+          statement.executeUpdate();
+	      
+	    } catch (Exception e) {
+	      System.out.println(e.getMessage());
+	    }
+	    
+	    return capacitacion;
+	  }
   
   /*public boolean deleteStudentById(int idStudent) {
     
