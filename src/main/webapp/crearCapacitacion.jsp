@@ -16,6 +16,7 @@
         <form id="login-form" action = "ServletCrearCapacitacion" method = "post">
             <div class="mb-3">
                 <label for="capacitacionId" class="form-label">Identificador</label>
+<<<<<<< HEAD
                 <input id="identificador" class="form-control" name="identificador">
                 <small id="identificadorHelp" class="form-text text-danger"></small>
             </div>
@@ -33,6 +34,21 @@
                 <label for="rut_cliente" class="form-label">Rut Cliente</label>
                 <input type="text" class="form-control" id="rutCliente" name="rutCliente">
                 <small id="rutClienteHelp" class="form-text text-danger"></small>
+=======
+                <input type="text" placeholder="Numérico" class="form-control" id="identificador" name="identificador">
+            </div>
+            <div class="mb-3">
+                <label for="duracion"  class="form-label">Duracion de la Capacitación</label>
+                <input type="text" placeholder="Numérico" class="form-control" id="duracion" name="duracion">
+            </div>
+            <div class="mb-3">
+                <label for="cantidadAsistentes" class="Numérico >0">Cantidad Asistentes de la Capacitación</label>
+                <input type="text" placeholder="Numérico >0" class="form-control" id="cantidadAsistentes" name="cantidadAsistentes">
+            </div>
+            <div class="mb-3">
+                <label for="rut_cliente" class="form-label">Rut Cliente</label>
+                <input type="text" placeholder="Numérico sin puntos, dv ni guion <99999999" class="form-control" id="rutCliente" name="rutCliente">
+>>>>>>> dfc14182e212c76095b9309a5dcce8bee673ef18
             </div>
             <div class="mb-3">
                 <label for="tematica" class="form-label">Tematica de la Capacitación </label>
@@ -46,14 +62,22 @@
             </div>
             <div class="mb-3">
                 <label for="Dia" class="form-label">Dia de la Capacitación</label>
+<<<<<<< HEAD
                 <input type="text" class="form-control" id="dia" name="dia">
                 <small id="diaHelp" class="form-text text-danger"></small>
+=======
+                <input type="text" placeholder="Lunes, Martes..." class="form-control" id="dia" name="dia">
+>>>>>>> dfc14182e212c76095b9309a5dcce8bee673ef18
             </div>
             
             <div class="mb-3">
                 <label for="hora" class ="form-label">Horario de la Capacitación</label>
+<<<<<<< HEAD
                 <input type="text" class="form-control" id="hora" name="hora">
                 <small id="horaHelp" class="form-text text-danger"></small>
+=======
+                <input type="text" placeholder="HH:MM" class="form-control" id="hora" name="hora">
+>>>>>>> dfc14182e212c76095b9309a5dcce8bee673ef18
             </div>
           
           

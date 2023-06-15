@@ -1,5 +1,5 @@
  .fondo {
-	background: linear-gradient(to right, #ffffff, #dddddd);
+	background: linear-gradient(to right, rgb(255, 0, 0), #dddddd);
 }
 
 .fondo-form {
