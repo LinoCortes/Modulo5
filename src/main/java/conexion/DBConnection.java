@@ -22,7 +22,7 @@ public class DBConnection {
       Class.forName("com.mysql.cj.jdbc.Driver"); // utilizamos el driver o cargamos el driver
       // Class.forName("org.mariadb.jdbc.Driver");
       connection = DriverManager.getConnection(URL_CONEXION, LOGIN, PASSWORD);
-      
+      System.out.println("Prueba");
       if(connection != null) {
         System.out.println("La conexión a : " + DB + " ha sido exitosa");
       } else {
@@ -30,6 +30,7 @@ public class DBConnection {
       }
       
     } catch (Exception e) {
+      System.out.println("Se ha producido un error");
       System.out.println(e.getMessage());
     }
   }
