@@ -40,7 +40,7 @@
             </div>
             <div class="mb-3">
                 <label for="Dia" class="form-label">Dia de la Capacitación</label>
-                <input type="text" class="form-control" id="dia" name="dia">
+                <input type="text" placeholder="Lunes, Martes..." class="form-control" id="dia" name="dia">
             </div>
             
             <div class="mb-3">
