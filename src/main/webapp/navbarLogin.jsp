@@ -14,6 +14,7 @@
           </a>
           
           <ul class="dropdown-menu">
+          		<li><a class="dropdown-item" href="index.jsp">Inicio</a></li>
                	<li><a class="dropdown-item" href="ServletListarCapacitacion">Listar capacitación</a></li>
             	<li><a class="dropdown-item" href="crearCapacitacion.jsp">Crear capacitación</a></li>
                 <li><a class="dropdown-item" href="listarUsuarios.jsp">Listar usuario</a></li>

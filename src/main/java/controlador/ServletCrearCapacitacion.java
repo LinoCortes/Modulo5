@@ -56,7 +56,7 @@ public class ServletCrearCapacitacion extends HttpServlet {
     			capacitacionControlador.crearCapacitaciones(capacitacion);
 
     			// Redirigir a una página de éxito o mostrar un mensaje de éxito
-    			response.sendRedirect("listarCapacitacion.jsp");
+    			response.sendRedirect("ServletListarCapacitacion");
     	    
     	    }  	
        
