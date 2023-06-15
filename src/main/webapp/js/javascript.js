@@ -4,7 +4,7 @@ let form = document.querySelector("#login-form");
 
 let identificador = document.querySelector("#identificador");
 let duracion = document.querySelector("#duracion");
-let cantidadAsistente = document.querySelector("#cantidadAsistente");
+let cantidadAsistentes = document.querySelector("#cantidadAsistentes");
 let rutCliente = document.querySelector("#rutCliente");
 let tematica = document.querySelector("#tematica");
 let lugar = document.querySelector("#lugar");
@@ -13,58 +13,38 @@ let hora = document.querySelector("#hora");
 
   function validate() {
   
-  let identificadorValue = identificador.value;
-  let duracionValue = duracion.value;
-  let cantidadAsistenteValue = cantidadAsistente.value;
-  let rutClienteValue = rutCliente.value;
-  let tematicaValue = tematica.value;
-  let lugarValue = lugar.value;
-  let diaValue = dia.value;
-  let horaValue = hora.value;
   
-  let soloNumero = /^\d+$/;
+  var identificador = document.getElementById("identificador").value;
+  var duracion = document.getElementById("duracion").value;
+  var cantidadAsistentes = document.getElementById("cantidadAsistentes").value;
+  var rutCliente = document.getElementById("rutCliente").value;
+  var tematica = document.getElementById("tematica").value;
+  var dia = document.getElementById("dia").value;
+  var hora = document.getElementById("hora").value;
+  var lugar = document.getElementById("lugar").value;
   
-  if(!soloNumero.test(identificadorValue)) {
-    document.querySelector("#identificadorHelp").innerHTML = "Por favor, ingresa un ID, numérico";
-    return false;
-  } 
   
-  /*if(!Number.isInteger(duracionValue) || duracionValue < 0) {
-    document.querySelector("#duracionHelp").innerHTML = "Por favor, ingresa la duración en minutos, numérico";
+  var numericRegex = /^[0-9]+$/;
+
+  if (!numericRegex.test(identificador) || !numericRegex.test(duracion) || !numericRegex.test(cantidadAsistentes) || !numericRegex.test(rutCliente)) {
+    alert("Identificador, Duracion, cantidad de asistentes y rut cliente deben ser del tipo numérico");
     return false;
   }
-  
-  if(!Number.isInteger(cantidadAsistenteValue) || cantidadAsistenteValue < 0) {
-    document.querySelector("#cantidadAsistenteHelp").innerHTML = "Por favor, ingresa la cantidad de asistentes, numérico";
+
+  var rutCliente = parseInt(rutCliente, 10);
+  if (rutCliente >= 99999999) {
+    alert("El campo rut debe ser menor a 99,999,999");
     return false;
-  } 
-  
-  if(!Number.isInteger(rutClienteValue) || rutClienteValue < 99999999 ) {
-    document.querySelector("#rutClienteHelp").innerHTML = "Por favor, ingresa un rut válido, numérico";
+  }
+
+ if (identificador === "" || duracion === "" || cantidadAsistentes === "" ||  rutCliente === "" || 
+ tematica === "" || 
+ dia === "" || 
+ hora === "" || 
+ lugar === "") {
+    alert("Todos los campos deben ser completados");
     return false;
-  } 
-    
-  if(tematicaValue == null) {
-    document.querySelector("#tematicaHelp").innerHTML = "Por favor, ingresa la tematica a tratar en la capacitación";
-    return false;
-  } 
-  
-  if(lugarValue == null ) {
-    document.querySelector("#lugarHelp").innerHTML = "Por favor, ingresa un lugar de la capacitación";
-    return false;
-  } 
-  
-  if(!diaValue instanceof String) {
-    document.querySelector("#diaHelp").innerHTML = "Por favor, escriba el día de la capacitación";
-    return false;
-  } 
-  
-  if(!horaValue instanceof String) {
-    document.querySelector("#horaHelp").innerHTML = "Por favor, escriba la hora de la capacitación";
-    return false;
-  }*/
-  
-  //* Si todo esta bien pasaron todas las validaciones, retornamos TRUE
+  }
   	return true;
   }
 
