@@ -23,6 +23,7 @@
 				<table class="table">
 					<thead>
 						<tr>
+							
 							<th scope="col">#</th>
 							<th scope="col">Nombre</th>
 							<th scope="col">Run</th>
@@ -38,6 +39,7 @@
                     	  for(Usuario s: usuarios ) {
                     %>
 						<tr>
+							<td><%= s.getId() %></td>
 							<td><%= s.getNombre() %></td>
 							<td><%= s.getRun() %></td>
 							<td><%= s.getFechaNacimiento() %></td>
