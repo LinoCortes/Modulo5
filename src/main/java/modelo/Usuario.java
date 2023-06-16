@@ -1,19 +1,19 @@
 package modelo;
 
-import java.time.LocalDate;
+import java.io.Serializable;
 
-public class Usuario{
-	private String nombres;
-	private int run;
-	private LocalDate fechaNacimiento;
+public class Usuario implements Serializable{
+	private int id;
+	private String nombre, run, fechaNacimiento;
 	
 	//se crean los constructores
 	public Usuario() {
 		
 	}
 	
-	public Usuario(String nombre, int run, LocalDate fechaNacimiento) {
-		this.nombres = nombre;
+	public Usuario(int id, String run, String nombre ,String fechaNacimiento) {
+		this.id=id;
+		this.nombre = nombre;
 		this.run = run;
 		this.fechaNacimiento = fechaNacimiento;
 	}
@@ -21,35 +21,44 @@ public class Usuario{
 		
 	//se crean los getters y setters.
 	public String getNombre() {
-		return nombres;
+		return nombre;
 	}
-
 
 	public void setNombre(String nombre) {
-		this.nombres = nombre;
+		this.nombre = nombre;
+	}
+	
+	public int getId() {
+		return id;
+	}
+	
+	public void setId(int id) {
+		this.id = id;
 	}
 
-	public int getRun() {
+	public String getRun() {
 		return run;
 	}
 
-	public void setRun(int run) {
+	public void setRun(String run) {
 		this.run = run;
 	}
 
-	public LocalDate getFechaNacimiento() {
+	public String getFechaNacimiento() {
 		return fechaNacimiento;
 	}
 
 
-	public void setFechaNacimiento(LocalDate fechaNacimiento) {
+	public void setFechaNacimiento(String fechaNacimiento) {
 		this.fechaNacimiento = fechaNacimiento;
 	}
-	
 	
 	//Sobreescribe el metodo toString
 	@Override
 	public String toString() {
-		return "Usuario [nombre=" + nombres + ", run=" + run + ", fechaNacimiento=" + fechaNacimiento + "]";
+		return "Usuario [id=" + id + ", nombre=" + nombre + ", run=" + run + ", fechaNacimiento=" + fechaNacimiento
+				+ "]";
 	}
+	
+	private static final long serialVersionUID=1L;
 }
