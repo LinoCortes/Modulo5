@@ -27,4 +27,10 @@ public class Administrativo extends Usuario{
 	public void setExperienciaPrevia(String experienciaPrevia) {
 		this.experienciaPrevia = experienciaPrevia;
 	}
+
+	@Override
+	public String toString() {
+		
+		return super.toString()+" Administrativo [area=" + area + ", experienciaPrevia=" + experienciaPrevia + "]";
+	}
 }

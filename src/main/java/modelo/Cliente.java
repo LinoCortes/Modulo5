@@ -90,5 +90,12 @@ public class Cliente extends Usuario{
 	public void setComuna(String comuna) {
 		this.comuna = comuna;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString()+" Cliente [rut=" + rut + ", edad=" + edad + ", nombres=" + nombres + ", apellidos=" + apellidos
+				+ ", telefono=" + telefono + ", afp=" + afp + ", direccion=" + direccion + ", comuna=" + comuna
+				+ ", fechaNacimiento=" + fechaNacimiento + "]";
+	}
 	
 }

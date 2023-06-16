@@ -27,6 +27,11 @@ public class Profesional extends Usuario{
 	public void setFechaIngreso(String fechaIngreso) {
 		this.fechaIngreso = fechaIngreso;
 	}
+
+	@Override
+	public String toString() {
+		return super.toString() + " Profesional [titulo=" + titulo + ", fechaIngreso=" + fechaIngreso + "]";
+	}
 	
 	
 	
