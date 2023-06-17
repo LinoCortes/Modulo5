@@ -16,9 +16,9 @@ public class Cliente extends Usuario{
 		return rut;
 	}
 
-	public Cliente(int rut, int edad, String nombres, String apellidos, String telefono, String afp, String direccion,
-			String comuna, LocalDate fechaNacimiento) {
-		super(nombres, rut, fechaNacimiento);
+	public Cliente(int id,String run,int rut, int edad, String nombre, String apellidos, String telefono, String afp, String direccion,
+			String comuna, String fechaNacimiento) {
+		super(id,run,nombre,fechaNacimiento);
 		this.edad = edad;
 		this.apellidos = apellidos;
 		this.telefono = telefono;

@@ -1,13 +1,12 @@
 package modelo;
 
-import java.time.LocalDate;
 
 public class Profesional extends Usuario{
 	
 	String titulo, fechaIngreso;
 
-	public Profesional(String nombres,int run, LocalDate fechaNacimiento,String titulo, String fechaIngreso) {
-		super(nombres,run, fechaNacimiento);
+	public Profesional(int id,String nombre,String run, String fechaNacimiento,String titulo, String fechaIngreso) {
+		super(id,nombre,run,fechaNacimiento);
 		this.titulo = titulo;
 		this.fechaIngreso = fechaIngreso;
 	}

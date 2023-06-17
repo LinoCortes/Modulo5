@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import modelo.Capacitacion;
-import controlador.CapacitacionControlador;
+import implementacion.CapacitacionControlador;
 
 /**
  * Servlet implementation class ServletCrearCapacitacion
