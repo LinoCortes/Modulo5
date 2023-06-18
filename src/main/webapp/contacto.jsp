@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
-    
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,10 +9,10 @@
 	<link rel="stylesheet" href="css/stylesform.css">
 <title>Contacto</title>
 </head>
-<body>
+<body class="bg-success">
 	<jsp:include page="navbarLogin.jsp" />
-  <h1>Formulario de Contacto</h1>
-  <div class="container">
+  <h1 class="text-white fs-1 text pt-5">Formulario de Contacto</h1>
+  <div class="container position-absolute top-50 start-50 translate-middle">
     <form action="#" method="post">
       <div class="form-group">
         <label for="name">Nombre:</label>
@@ -29,6 +29,6 @@
       <input type="submit" value="Enviar">
     </form>
   </div>
- 
+
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>

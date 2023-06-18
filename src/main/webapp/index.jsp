@@ -12,7 +12,7 @@
 <body class="bg-success">
 	<jsp:include page="navbar.jsp" />
 
-	<h4 class="text-white fs-1 text pt-5 text-white fs-1 text pt-5 d-none d-lg-block">
+	<h4 class="pt-5 text-white fs-1 text pt-5 d-none d-lg-block">
 		<center>Bienvenido/a a nuestra página web de asesorías de
 			riesgo, tu recurso confiable para gestionar y minimizar los riesgos
 			en tu negocio.</center>
