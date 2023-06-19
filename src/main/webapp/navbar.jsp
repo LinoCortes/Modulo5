@@ -21,10 +21,6 @@
      <c:if test="${not empty sessionScope.usuario}">
      	<div class="d-flex justify-content-between align-items-center">
     	<p class="text-white-50 mx-3 my-2"> Bienvenido <span class="fw-bold text-capitalize">${sessionScope.usuario}</span></p>
-
-	    <form class="form-inline" action="ServletLogout" method="post">    
-	    	<button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Cerrar sesión</button>
-	    </form>
 		</div>
      
      </c:if>

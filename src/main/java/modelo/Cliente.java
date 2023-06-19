@@ -2,23 +2,21 @@ package modelo;
 
 import java.time.LocalDate;
 
-public class Cliente extends Usuario{
-	private int rut,edad;
-	private String nombres,apellidos,telefono,afp,direccion,comuna;
-	private LocalDate fechaNacimiento;
-	
-	//se crean los constructores
-	
-	
-	//se crea los metodos getters y setters
+public class Cliente extends Usuario {
+	private int rut, edad;
+	private String apellidos, telefono, afp, direccion, comuna;
+
+	// se crean los constructores
+
+	// se crea los metodos getters y setters
 
 	public int getRut() {
 		return rut;
 	}
 
-	public Cliente(int id,String run,int rut, int edad, String nombre, String apellidos, String telefono, String afp, String direccion,
-			String comuna, String fechaNacimiento) {
-		super(id,run,nombre,fechaNacimiento);
+	public Cliente(int id, String run, int rut, int edad, String nombre, String apellidos, String telefono, String afp,
+			String direccion, String comuna, String fechaNacimiento) {
+		super(id, run, nombre, fechaNacimiento);
 		this.edad = edad;
 		this.apellidos = apellidos;
 		this.telefono = telefono;
@@ -28,7 +26,7 @@ public class Cliente extends Usuario{
 	}
 
 	public void setRut(int rut) {
-		if (rut>99999999) {
+		if (rut > 99999999) {
 			System.out.println("El rut ingresado no es válido");
 		} else {
 			this.rut = rut;
@@ -41,14 +39,6 @@ public class Cliente extends Usuario{
 
 	public void setEdad(int edad) {
 		this.edad = edad;
-	}
-
-	public String getNombres() {
-		return nombres;
-	}
-
-	public void setNombres(String nombres) {
-		this.nombres = nombres;
 	}
 
 	public String getApellidos() {
@@ -93,9 +83,9 @@ public class Cliente extends Usuario{
 
 	@Override
 	public String toString() {
-		return super.toString()+" Cliente [rut=" + rut + ", edad=" + edad + ", nombres=" + nombres + ", apellidos=" + apellidos
-				+ ", telefono=" + telefono + ", afp=" + afp + ", direccion=" + direccion + ", comuna=" + comuna
-				+ ", fechaNacimiento=" + fechaNacimiento + "]";
+		return super.toString() + " Cliente [rut=" + rut + ", edad=" + edad + ", apellidos="
+				+ apellidos + ", telefono=" + telefono + ", afp=" + afp + ", direccion=" + direccion + ", comuna="
+				+ comuna + "]";
 	}
-	
+
 }
