@@ -73,10 +73,6 @@
 				<input type="text" class="form-control" id="comuna" name="comuna">
 			</div>
 			<div class="mb-3">
-				<label class="form-label" id="edadlabel">Edad</label> 
-				<input type="text" class="form-control" id="edad" name="edad">
-			</div>
-			<div class="mb-3">
 				<label class="form-label" id="titulolabel">Titulo</label> 
 				<input type="text" class="form-control" id="titulo" name="titulo">
 			</div>
