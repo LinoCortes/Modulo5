@@ -75,14 +75,27 @@ function onChange() {
 			apellidosLabel.style.display="none"
 			break;
 		case "Cliente":
-			area.style.display = "none"
+            fechaIngreso.style.display="block"
+            fechaIngresoLabel.style.display="block"
+            edad.style.display = "block"
+            edadLabel.style.display = "block"
+            comuna.style.display = "block"
+            comunaLabel.style.display = "block"
+            direccion.style.display = "block"
+            direccionLabel.style.display = "block"
+            afp.style.display="block"
+            afpLabel.style.display="block"
+            rut.style.display="block"
+            rutLabel.style.display="block"
+            apellidos.style.display="block"
+            apellidosLabel.style.display="block"
+            area.style.display = "none"
             areaLabel.style.display = "none"
             expPrevia.style.display = "none"
             expPreviaLabel.style.display = "none"
             titulo.style.display = "none"
             tituloLabel.style.display = "none"
             fechaIngreso.style.display = "none"
-            fechaIngresoLabel.style.display = "none"
-			
+            fechaIngresoLabel.style.display = "none"		
 	}
 }

@@ -1,4 +1,4 @@
-<%@page import="modelo.Usuario"%>
+<%@page import="modelo.Administrativo"%>
 <%@page import="java.util.List"%>
 
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
@@ -28,21 +28,26 @@
 							<th scope="col">Nombre</th>
 							<th scope="col">Run</th>
 							<th scope="col">Fecha de nacimiento</th>
+							<th scope="col">Area</th>
+							<th scope="col">Experiencia Previa</th>
 						</tr>
 					</thead>
 					<tbody class="table-group-divider">
 						<!-- el ciclo for de java -->
-						<% List<Usuario> usuarios = (List<Usuario>)request.getAttribute("usuarios");
+						<% List<Administrativo> administrativos = (List<Administrativo>)request.getAttribute("administrativos");
                     	System.out.println("Prueba");
-						System.out.println(usuarios);
-                    	if(usuarios != null) {
-                    	  for(Usuario s: usuarios ) {
+						System.out.println("en administrativo");
+                    	if(administrativos != null) {
+                    	  for(Administrativo s: administrativos ) {
                     %>
 						<tr>
 							<td><%= s.getId() %></td>
 							<td><%= s.getNombre() %></td>
 							<td><%= s.getRun() %></td>
 							<td><%= s.getFechaNacimiento() %></td>
+							<td><%= s.getArea() %></td>
+							<td><%= s.getExperienciaPrevia() %></td>			
+						
 						</tr>
 						<!-- fin del for de java -->
 

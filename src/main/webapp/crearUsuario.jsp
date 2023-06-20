@@ -17,11 +17,11 @@
 	<h1 class="text-center">Crear Usuario</h1>
 
 	<div class="container centered-form">
-		<form class="custom-form">
-			<select class="form-select" aria-label="Default select example" id="tipoUsuario" onchange="onChange()">
+		<form class="custom-form" action="ServletCrearUsuario" method="post">
+			<select class="form-select" aria-label="Default select example" id="tipoUsuario" name="tipoUsuario" onchange="onChange()">
 				<option selected>Tipo de usuario</option>
 				<option value="1">Administrativo</option>
-				<option value="2">Profesional</option>
+				<option value="2">Profesional</option> 
 				<option value="3">Cliente</option>
 			</select>
 			<div class="mb-3">

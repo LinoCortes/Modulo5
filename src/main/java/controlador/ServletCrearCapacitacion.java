@@ -29,7 +29,6 @@ public class ServletCrearCapacitacion extends HttpServlet {
     
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
     	   // Obtener los parámetros de la solicitud POST
-    			System.out.println("Dentro de crear capacitaicon");
     	    	int identificador = Integer.parseInt(request.getParameter("identificador"));
     			int duracion = Integer.parseInt(request.getParameter("duracion"));
     			int cantidadAsistentes = Integer.parseInt(request.getParameter("cantidadAsistentes"));
