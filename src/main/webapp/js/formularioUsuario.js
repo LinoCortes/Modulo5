@@ -1,11 +1,5 @@
 
 let tipoUsuario = document.querySelector("#tipoUsuario");
-let nombre = document.querySelector("#nombre");
-let nombreLabel = document.querySelector("nombrelabel");
-let run = document.querySelector("#run");
-let runLabel = document.querySelector("#runlabel");
-let fechaNacimiento = document.querySelector("#fechanacimiento");
-let fechaNacimientoLabel = document.querySelector("#fechanacimientolabel");
 let edad = document.querySelector("#edad");
 let edadLabel = document.querySelector("#edadlabel");
 let expPrevia = document.querySelector("#expprevia");
@@ -41,6 +35,10 @@ function onChange() {
 			tituloLabel.style.display = "none"
 			fechaIngreso.style.display = "none"
 			fechaIngresoLabel.style.display = "none"
+			area.style.display="block"
+			areaLabel.style.display="block"
+			expPrevia.style.display="block"
+			expPreviaLabel.style.display="block"
 			comuna.style.display = "none"
 			comunaLabel.style.display = "none"
 			direccion.style.display = "none"
@@ -53,10 +51,38 @@ function onChange() {
 			apellidosLabel.style.display="none"
 			rut.style.display="none"
 			rutLabel.style.display="none"
+			break;
 		case "Profesional":
-			edad.style.display="none"
-			edadLabel.style.display="none"		
+			titulo.style.display="block"
+			tituloLabel.style.display="block"
+			fechaIngreso.style.display="block"
+			fechaIngresoLabel.style.display="block"
+			area.style.display="none"
+			areaLabel.style.display="none"	
+			expPrevia.style.display="none"
+			expPreviaLabel.style.display="none"
+			edad.style.display = "none"
+			edadLabel.style.display = "none"
+			comuna.style.display = "none"
+			comunaLabel.style.display = "none"
+			direccion.style.display = "none"
+			direccionLabel.style.display = "none"
+			afp.style.display="none"
+			afpLabel.style.display="none"
+			rut.style.display="none"
+			rutLabel.style.display="none"
+			apellidos.style.display="none"
+			apellidosLabel.style.display="none"
+			break;
 		case "Cliente":
+			area.style.display = "none"
+            areaLabel.style.display = "none"
+            expPrevia.style.display = "none"
+            expPreviaLabel.style.display = "none"
+            titulo.style.display = "none"
+            tituloLabel.style.display = "none"
+            fechaIngreso.style.display = "none"
+            fechaIngresoLabel.style.display = "none"
 			
 	}
 }

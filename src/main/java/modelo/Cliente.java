@@ -20,6 +20,7 @@ public class Cliente extends Usuario {
 		this.edad = edad;
 		this.apellidos = apellidos;
 		this.telefono = telefono;
+		this.rut= rut;
 		this.afp = afp;
 		this.direccion = direccion;
 		this.comuna = comuna;
