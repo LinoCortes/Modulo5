@@ -51,9 +51,7 @@
 					<!-- el ciclo for de java -->
 					<%
 					List<Administrativo> administrativos = (List<Administrativo>) request.getAttribute("administrativos");
-					System.out.println("Listando administrativos desde el jsp");
 					if (administrativos != null) {
-						System.out.println("Dentro del if en el jsp");
 						for (Administrativo s : administrativos) {
 					%>
 					<tr>
@@ -61,6 +59,15 @@
 						<td><%=s.getNombre()%></td>
 						<td><%=s.getRun()%></td>
 						<td><%=s.getFechaNacimiento()%></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
+						<td></td>
 						<td><%=s.getArea()%></td>
 						<td><%=s.getExperienciaPrevia()%></td>
 

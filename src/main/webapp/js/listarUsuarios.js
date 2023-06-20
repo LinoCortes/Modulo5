@@ -11,9 +11,12 @@ let titulo = document.querySelector("#coltitulo");
 let fechaIngreso = document.querySelector("#colfechaingreso");
 let comuna = document.querySelector("#colcomuna");
 let tabla = document.getElementById("tabla");
+tabla.rows[i].cells[j].style.display = "none";
+	
 
 function onChange() {
 	let selectedOption = tipoUsuario.options[tipoUsuario.selectedIndex].text;
+	tabla.rows[i].cells[j].style.display = "none";
 	for (var i = 0; i < tabla.rows.length; i++) {
 		for (var j = 0; j < tabla.rows[i].cells.length; j++) {
 			tabla.rows[i].cells[j].style.display = "none";

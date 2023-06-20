@@ -4,13 +4,15 @@ import java.util.List;
 
 import interfaces.IAdministrativoControlador;
 import modelo.Administrativo;
+import service.AdministrativoService;
 
 public class AdministrativoControlador implements IAdministrativoControlador{
 
+	AdministrativoService administrativoService = new AdministrativoService();
+	
 	@Override
 	public List<Administrativo> findAllAdministrativos() {
-		// TODO Auto-generated method stub
-		return null;
+		return administrativoService.findAllAdministrativos();
 	}
 
 	@Override
