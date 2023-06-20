@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import implementacion.AdministrativoControlador;
 import implementacion.UsuarioControlador;
 
 /**
@@ -20,11 +21,11 @@ public class ServletListarUsuarios extends HttpServlet {
        
 	protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	    
-	    UsuarioControlador usuarioControlador = new UsuarioControlador();
+	    AdministrativoControlador administrativoControlador = new AdministrativoControlador();
 	    System.out.println("Dentro de usuarios");
 	    // System.out.println(studentController.findAllStundents()); []
 	    
-	    request.setAttribute("usuarios", usuarioControlador.findAllUsuario());
+	    request.setAttribute("administrativos", administrativoControlador.findAllAdministrativos());
 	    // reenviar esta informacion a un JSP
 	    RequestDispatcher dispatcher = request.getRequestDispatcher("/listarUsuarios.jsp");
 	    dispatcher.forward(request, response);

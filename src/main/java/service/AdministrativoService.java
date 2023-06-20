@@ -16,7 +16,9 @@ public class AdministrativoService {
 
 		List<Administrativo> administrativos = new ArrayList<>();
 		DBConnection conexion = DBConnection.getInstance();
-		String sql = "SELECT * FROM administrativo";
+		String sql = "SELECT usuario.id, usuario.nombre, usuario.run, usuario.fecha_nacimiento, administrativo.area, administrativo.exp_previa\r\n"
+				+ "FROM administrativo\r\n"
+				+ "INNER JOIN usuario ON usuario.id=administrativo.id_usuario;";
 
 		try {
 
@@ -24,14 +26,15 @@ public class AdministrativoService {
 			ResultSet rs = statement.executeQuery();
 
 			while (rs.next()) {
-				int id = rs.getInt("id_usuario");
+				int id = rs.getInt("id");
 				String nombre = rs.getString("nombre");
 				String run = rs.getString("run");
 				String fechaNacimiento = rs.getString("fecha_nacimiento");
 				String area = rs.getString("area");
 				String expPrevia = rs.getString("exp_previa");
 				Administrativo administrativo = new Administrativo(id, nombre, run, fechaNacimiento, area, expPrevia);
-				System.out.println(administrativo);
+				System.out.println("Se imprime administrativo en AdministrativoService");
+				System.out.println(administrativo.toString());
 
 				administrativos.add(administrativo);
 				// System.out.println(students);

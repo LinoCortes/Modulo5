@@ -23,6 +23,7 @@ public class UsuariosService {
 
 			PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
 			ResultSet rs = statement.executeQuery();
+			System.out.println("Dentro de usuarios service");
 
 			while (rs.next()) {
 				int id = rs.getInt("id");
@@ -33,7 +34,7 @@ public class UsuariosService {
 				System.out.println("Dentro del service");
 
 				usuarios.add(usuario);
-				// System.out.println(students);
+				
 			}
 
 		} catch (Exception e) {
