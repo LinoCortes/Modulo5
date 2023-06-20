@@ -1,11 +1,10 @@
 package interfaces;
 
 import java.util.List;
-import modelo.Cliente;
-
+import modelo.Administrativo;
 
 public interface IAdministrativoControlador {
-	public List<Cliente> findAllClientes();
+	public List<Administrativo> findAllAdministrativos();
 	
-	public Cliente crearCliente(Cliente cliente);
+	public Administrativo crearAdministrativo(Administrativo administrativo);
 }
