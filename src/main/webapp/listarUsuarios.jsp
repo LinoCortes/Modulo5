@@ -26,7 +26,7 @@
 				<option value="2">Profesional</option>
 				<option value="3">Cliente</option>
 			</select>
-			<table class="table">
+			<table id ="tabla" class="table">
 				<thead>
 					<tr>
 
@@ -37,6 +37,7 @@
 						<th id="colapellidos" scope="col">Apellidos</th>
 						<th id="coltelefono" scope="col">Telefono</th>
 						<th id="colrut" scope="col">Rut</th>
+						<th id="colrut" scope="col">Edad</th>
 						<th id="colafp" scope="col">Afp</th>
 						<th id="coldireccion" scope="col">Direccion</th>
 						<th id="colcomuna" scope="col">Comuna</th>
