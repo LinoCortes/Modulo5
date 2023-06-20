@@ -19,46 +19,61 @@
 	<div class="container mt-5">
 		<h2 class="text-center mb-4"></h2>
 		<div class="row">
-			<div class="col-6 offset-3">
-				<table class="table">
-					<thead>
-						<tr>
-							
-							<th scope="col">#</th>
-							<th scope="col">Nombre</th>
-							<th scope="col">Run</th>
-							<th scope="col">Fecha de nacimiento</th>
-							<th scope="col">Area</th>
-							<th scope="col">Experiencia Previa</th>
-						</tr>
-					</thead>
-					<tbody class="table-group-divider">
-						<!-- el ciclo for de java -->
-						<% List<Administrativo> administrativos = (List<Administrativo>)request.getAttribute("administrativos");
-                    	System.out.println("Prueba");
-						System.out.println("en administrativo");
-                    	if(administrativos != null) {
-                    	  for(Administrativo s: administrativos ) {
-                    %>
-						<tr>
-							<td><%= s.getId() %></td>
-							<td><%= s.getNombre() %></td>
-							<td><%= s.getRun() %></td>
-							<td><%= s.getFechaNacimiento() %></td>
-							<td><%= s.getArea() %></td>
-							<td><%= s.getExperienciaPrevia() %></td>			
-						
-						</tr>
-						<!-- fin del for de java -->
+			<select class="form-select" aria-label="Default select example"
+				id="tipoUsuario" name="tipoUsuario" onchange="onChange()">
+				<option selected>Tipo de usuario</option>
+				<option value="1">Administrativo</option>
+				<option value="2">Profesional</option>
+				<option value="3">Cliente</option>
+			</select>
+			<table class="table">
+				<thead>
+					<tr>
 
-						<%
-						}
-						}
-						%>
-					</tbody>
-				</table>
-			</div>
+						<th id="colid" scope="col">#</th>
+						<th id="colnombre" scope="col">Nombre</th>
+						<th id="colrun" scope="col">Run</th>
+						<th id="colfechanacimiento" scope="col">Fecha de nacimiento</th>
+						<th id="colapellidos" scope="col">Apellidos</th>
+						<th id="coltelefono" scope="col">Telefono</th>
+						<th id="colrut" scope="col">Rut</th>
+						<th id="colafp" scope="col">Afp</th>
+						<th id="coldireccion" scope="col">Direccion</th>
+						<th id="colcomuna" scope="col">Comuna</th>
+						<th id="coltitulo" scope="col">Título</th>
+						<th id="colfechaingreso" scope="col">Fecha Ingreso</th>
+						<th id="colarea" scope="col">Area</th>
+						<th id="colexpprevia" scope="col">Experiencia Previa</th>
+					</tr>
+				</thead>
+				<tbody class="table-group-divider">
+					<!-- el ciclo for de java -->
+					<%
+					List<Administrativo> administrativos = (List<Administrativo>) request.getAttribute("administrativos");
+					System.out.println("Prueba");
+					System.out.println("en administrativo");
+					if (administrativos != null) {
+						for (Administrativo s : administrativos) {
+					%>
+					<tr>
+						<td><%=s.getId()%></td>
+						<td><%=s.getNombre()%></td>
+						<td><%=s.getRun()%></td>
+						<td><%=s.getFechaNacimiento()%></td>
+						<td><%=s.getArea()%></td>
+						<td><%=s.getExperienciaPrevia()%></td>
+
+					</tr>
+					<!-- fin del for de java -->
+
+					<%
+					}
+					}
+					%>
+				</tbody>
+			</table>
 		</div>
+	</div>
 	</div>
 
 
@@ -68,5 +83,6 @@
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
 		crossorigin="anonymous"></script>
+	<script src="js/listarUsuarios.js"></script>
 </body>
 </html>

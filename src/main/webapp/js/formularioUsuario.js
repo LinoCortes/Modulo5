@@ -25,8 +25,6 @@ let comunaLabel = document.querySelector("#comunalabel");
 
 function onChange() {
 	let selectedOption = tipoUsuario.options[tipoUsuario.selectedIndex].text;
-	console.log(edad);
-	console.log(afp);
 	switch (selectedOption) {
 		case "Administrativo":
 			edad.style.display = "none"
