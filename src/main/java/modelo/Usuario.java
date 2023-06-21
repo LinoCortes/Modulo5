@@ -11,7 +11,7 @@ public class Usuario implements Serializable{
 		
 	}
 	
-	public Usuario(int id, String run, String nombre ,String fechaNacimiento) {
+	public Usuario(int id, String nombre, String run ,String fechaNacimiento) {
 		this.id=id;
 		this.nombre = nombre;
 		this.run = run;

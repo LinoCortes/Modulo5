@@ -11,7 +11,7 @@ public class Administrativo extends Usuario{
 	}
 	
 	public Administrativo(int id,String nombre, String run, String fechaNacimiento, String area, String experienciaPrevia) {
-		super(id,run,nombre,fechaNacimiento);
+		super(id,nombre,run,fechaNacimiento);
 		this.area=area;
 		this.experienciaPrevia=experienciaPrevia;
 	}

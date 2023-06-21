@@ -3,20 +3,20 @@ package modelo;
 import java.time.LocalDate;
 
 public class Cliente extends Usuario {
-	private int rut, edad;
-	private String apellidos, telefono, afp, direccion, comuna;
+	private int edad;
+	private String apellidos, rut, telefono, afp, direccion, comuna;
 
 	// se crean los constructores
 
 	// se crea los metodos getters y setters
 
-	public int getRut() {
+	public String getRut() {
 		return rut;
 	}
 
-	public Cliente(int id, String run, int rut, int edad, String nombre, String apellidos, String telefono, String afp,
+	public Cliente(int id, String run, String rut, int edad, String nombre, String apellidos, String telefono, String afp,
 			String direccion, String comuna, String fechaNacimiento) {
-		super(id, run, nombre, fechaNacimiento);
+		super(id, nombre, run, fechaNacimiento);
 		this.edad = edad;
 		this.apellidos = apellidos;
 		this.telefono = telefono;
@@ -26,12 +26,8 @@ public class Cliente extends Usuario {
 		this.comuna = comuna;
 	}
 
-	public void setRut(int rut) {
-		if (rut > 99999999) {
-			System.out.println("El rut ingresado no es válido");
-		} else {
-			this.rut = rut;
-		}
+	public void setRut(String rut) {
+		this.rut = rut;	
 	}
 
 	public int getEdad() {
