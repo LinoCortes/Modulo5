@@ -26,7 +26,7 @@
 			</select>
 			<div class="mb-3">
 				<label class="form-label" id="nombrelabel">Nombre</label> 
-				<input type="text" class="form-control" id="nombre" name="Nombre">
+				<input type="text" class="form-control" id="nombre" name="nombre">
 			</div>
 			<div class="mb-3">
 				<label class="form-label" id="runlabel">Run</label> 
@@ -34,7 +34,7 @@
 			</div>
 			<div class="mb-3">
 				<label class="form-label" id="fechanacimientolabel">Fecha de nacimiento</label> 
-				<input type="number" class="form-control" id="fechanacimiento" name="Fecha">
+				<input type="number" class="form-control" id="fechanacimiento" name="fecha_nacimiento">
 			</div>
 			<div class="mb-3">
 				<label class="form-label" id="arealabel">Área</label> <input
@@ -42,7 +42,7 @@
 			</div>
 			<div class="mb-3">
 				<label class="form-label" id="expprevialabel">Experiencia Previa</label> 
-				<input type="text" class="form-control" id="expprevia" name="expPrevia">
+				<input type="text" class="form-control" id="expprevia" name="exp_previa">
 			</div>
 			<div class="mb-3">
 				<label class="form-label" id="rutlabel">Rut</label> 
@@ -78,7 +78,7 @@
 			</div>
 			<div class="mb-3">
 				<label class="form-label" id="fechaingresolabel">Fecha de Ingreso</label> 
-				<input type="text" class="form-control" id="fechaingreso" name="FechaIngreso">
+				<input type="text" class="form-control" id="fechaingreso" name="fecha_ingreso">
 			</div>
 			<button type="submit" class="btn btn-primary">Crear</button>
 		</form>

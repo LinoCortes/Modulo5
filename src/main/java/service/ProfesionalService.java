@@ -2,11 +2,11 @@ package service;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import conexion.DBConnection;
-import modelo.Administrativo;
 import modelo.Profesional;
 
 public class ProfesionalService {
@@ -45,4 +45,36 @@ public class ProfesionalService {
 		}
 		return profesionales;
 	}
+	public  Profesional crearProfesional(Profesional profesional) {
+		DBConnection conexion = DBConnection.getInstance();
+		String sqlUsuario = "INSERT INTO usuario (nombre, run, fecha_nacimiento) "
+				+ "VALUES (?, ?, ?)";
+		String sqlAdministrativo = "INSERT INTO profesional (id_usuario, titulo, fecha_ingreso) VALUES (?, ?, ?)";
+				
+	try {
+		
+		PreparedStatement usuarioStatement = conexion.getConnection().prepareStatement(sqlUsuario, Statement.RETURN_GENERATED_KEYS);
+		usuarioStatement.setString(1, profesional.getNombre());
+		usuarioStatement.setString(2, profesional.getRun());
+		usuarioStatement.setString(3, profesional.getFechaNacimiento());
+		usuarioStatement.executeUpdate();
+		ResultSet generatedKeys = usuarioStatement.getGeneratedKeys();
+	
+		int idUsuario = -1;
+		if (generatedKeys.next()) {
+			idUsuario = generatedKeys.getInt(1);
+		}
+		
+		PreparedStatement administrativoStatement = conexion.getConnection().prepareStatement(sqlAdministrativo);
+		administrativoStatement.setInt(1, idUsuario);
+        administrativoStatement.setString(2, profesional.getTitulo());
+        administrativoStatement.setString(3, profesional.getFechaIngreso());
+       	administrativoStatement.executeUpdate();
+       	
+       	
+	} catch (Exception e) {
+		System.out.println(e.getMessage());
+	}
+	return profesional;
+  }
 }

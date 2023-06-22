@@ -10,6 +10,12 @@ public class Profesional extends Usuario{
 		this.titulo = titulo;
 		this.fechaIngreso = fechaIngreso;
 	}
+	
+
+	public Profesional() {
+		
+	}
+
 
 	public String getTitulo() {
 		return titulo;

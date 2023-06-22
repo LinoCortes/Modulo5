@@ -17,8 +17,8 @@ public class ProfesionalControlador implements IProfesionalControlador{
 
 	@Override
 	public Profesional crearProfesional(Profesional profesional) {
-		// TODO Auto-generated method stub
-		return null;
+		return profesionalService.crearProfesional(profesional);
+		
 	}
 	
 }
