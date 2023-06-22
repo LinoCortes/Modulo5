@@ -23,16 +23,13 @@ public class UsuariosService {
 
 			PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
 			ResultSet rs = statement.executeQuery();
-			System.out.println("Dentro de usuarios service");
-
+			
 			while (rs.next()) {
 				int id = rs.getInt("id");
 				String nombre = rs.getString("nombre");
 				String run = rs.getString("run");
 				String fechaNacimiento = rs.getString("fecha_nacimiento");
 				Usuario usuario = new Usuario(id,run,nombre,fechaNacimiento);
-				System.out.println("Dentro del service");
-
 				usuarios.add(usuario);
 				
 			}
@@ -45,7 +42,6 @@ public class UsuariosService {
 
 	public Usuario crearUsuarios(Usuario usuario) {
 		DBConnection conexion = DBConnection.getInstance();
-		System.out.println("Dentro crear");
 		String sql = "INSERT INTO usuario (nombre,run,fecha_nacimiento) values (?,?,?)";
 		try {
 			PreparedStatement statement = conexion.getConnection().prepareStatement(sql);

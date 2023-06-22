@@ -38,9 +38,6 @@ public class ClienteService {
 				String direccion = rs.getString("direccion");
 				String comuna = rs.getString("comuna");
 				Cliente cliente = new Cliente(id,run,rut,edad,nombre,apellidos,telefono,afp,direccion,comuna,fechaNacimiento);
-				System.out.println("Se imprime cliente en ClienteService");
-				System.out.println(cliente.toString());
-
 				clientes.add(cliente);
 				// System.out.println(students);
 			}

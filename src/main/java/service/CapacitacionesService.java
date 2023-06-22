@@ -35,8 +35,6 @@ public class CapacitacionesService {
 				String lugar = rs.getString("lugar");
 				Capacitacion capacitacion = new Capacitacion(id, identificador, duracion, cantidadAsistentes, tematica,
 						rutCliente, dia, hora, lugar);
-				System.out.println(capacitacion);
-
 				capacitaciones.add(capacitacion);
 				// System.out.println(students);
 			}
@@ -49,7 +47,6 @@ public class CapacitacionesService {
 
 	public Capacitacion crearCapacitaciones(Capacitacion capacitacion) {
 		DBConnection conexion = DBConnection.getInstance();
-		System.out.println("Dentro crear");
 		String sql = "INSERT INTO capacitaciones (identificador, duracion, cantidadAsistentes, rutCliente, tematica, dia, hora, lugar) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
 
 		try {
@@ -62,7 +59,6 @@ public class CapacitacionesService {
 			statement.setString(6, capacitacion.getDia());
 			statement.setString(7, capacitacion.getHora());
 			statement.setString(8, capacitacion.getLugar());
-
 			statement.executeUpdate();
 
 		} catch (Exception e) {

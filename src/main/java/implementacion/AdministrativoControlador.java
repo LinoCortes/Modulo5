@@ -17,8 +17,9 @@ public class AdministrativoControlador implements IAdministrativoControlador{
 
 	@Override
 	public Administrativo crearAdministrativo(Administrativo administrativo) {
-		// TODO Auto-generated method stub
-		return null;
+		return administrativoService.crearAdministrativo(administrativo);
+		
 	}
+
 	
 }

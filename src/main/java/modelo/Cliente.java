@@ -26,6 +26,10 @@ public class Cliente extends Usuario {
 		this.comuna = comuna;
 	}
 
+	public Cliente() {
+		// TODO Auto-generated constructor stub
+	}
+
 	public void setRut(String rut) {
 		this.rut = rut;	
 	}

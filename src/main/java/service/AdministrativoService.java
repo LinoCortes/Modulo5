@@ -2,12 +2,13 @@ package service;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
 import conexion.DBConnection;
 import modelo.Administrativo;
-import modelo.Capacitacion;
+
 
 public class AdministrativoService {
 	DBConnection conexion = DBConnection.getInstance();
@@ -21,7 +22,7 @@ public class AdministrativoService {
 				+ "INNER JOIN usuario ON usuario.id=administrativo.id_usuario;";
 
 		try {
-
+			
 			PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
 			ResultSet rs = statement.executeQuery();
 
@@ -46,28 +47,49 @@ public class AdministrativoService {
 		return administrativos;
 	}
 
-	public Capacitacion crearCapacitaciones(Capacitacion capacitacion) {
+	public  Administrativo crearAdministrativo(Administrativo administrativo) {
 		DBConnection conexion = DBConnection.getInstance();
-		System.out.println("Insertar un administrativo");
-		String sqlUsuario = "INSERT INTO usuario (nombre, run, fecha_nacimiento) VALUES (?, ?, ?)";
-
+		//para generar insercion de datos a la tabla usuario
+		String sqlUsuario = "INSERT INTO usuario (nombre, run, fecha_nacimiento) "
+				+ "VALUES (?, ?, ?)";
+		//para generar la insercion de datos a la tabla administrativo
+		String sqlAdministrativo = "INSERT INTO administrativo (id_usuario, area, exp_previa) VALUES (?, ?, ?)";
+				
+				
 		try {
-			PreparedStatement statement = conexion.getConnection().prepareStatement(sqlUsuario);
-			statement.setInt(1, capacitacion.getIdentificador());
-			statement.setInt(2, capacitacion.getDuracion());
-			statement.setInt(3, capacitacion.getCantidadAsistentes());
-			statement.setString(4, capacitacion.getRutCliente());
-			statement.setString(5, capacitacion.getTematica());
-			statement.setString(6, capacitacion.getDia());
-			statement.setString(7, capacitacion.getHora());
-			statement.setString(8, capacitacion.getLugar());
-
-			statement.executeUpdate();
-
+			//agregamos al final la sentencia Statement.RETURN_GENERATED_KEYS el cual retorna el valor de la llave autogenerada
+			//la cual recuperaremos posteriormente con el getGeneratedKeys()
+			PreparedStatement usuarioStatement = conexion.getConnection().prepareStatement(sqlUsuario, Statement.RETURN_GENERATED_KEYS);
+			usuarioStatement.setString(1, administrativo.getNombre());
+			usuarioStatement.setString(2, administrativo.getRun());
+			usuarioStatement.setString(3, administrativo.getFechaNacimiento());
+			usuarioStatement.executeUpdate();
+			
+			//tomamos el id auto generado de la columna 1 de usuarios
+			ResultSet generatedKeys = usuarioStatement.getGeneratedKeys();
+			//convencion general de variable -1 cuando verifique que exista una columna en el resulset va a recuperar 
+			//el valor de la primera columna dentro del if le pasamos el valor de la primera columna a idUsuario
+			int idUsuario = -1;
+			if (generatedKeys.next()) {
+				idUsuario = generatedKeys.getInt(1);
+			}
+			//como tenemos almacenado ya el valor que genero autmaticamente al crear usuario en la variable idUsuario, la pasamos 
+			//como llave al campo id_usuario en la tabla administrativo.
+			PreparedStatement administrativoStatement = conexion.getConnection().prepareStatement(sqlAdministrativo);
+			administrativoStatement.setInt(1, idUsuario);
+            administrativoStatement.setString(2, administrativo.getArea());
+            administrativoStatement.setString(3, administrativo.getExperienciaPrevia());
+           	administrativoStatement.executeUpdate();
+           	
+           	
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		}
-
-		return capacitacion;
+		}	
+		
+		return administrativo;	
+		
 	}
+	
 }
+
+
