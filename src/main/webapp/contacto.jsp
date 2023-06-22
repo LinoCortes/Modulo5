@@ -13,7 +13,7 @@
 	<jsp:include page="navbarLogin.jsp" />
   <h1 class="text-white fs-1 text pt-5">Formulario de Contacto</h1>
   <div class="container position-absolute top-50 start-50 translate-middle">
-    <form action="#" method="post">
+    <form action="#" method="post" accept-charset="UTF-8" id="formulario">
       <div class="form-group">
         <label for="name">Nombre:</label>
         <input type="text" id="name" name="name" required>
@@ -30,5 +30,6 @@
     </form>
   </div>
 
+  <script src="js/contacto.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
 </body>
