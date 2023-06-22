@@ -36,13 +36,13 @@ public class ServletCrearUsuario extends HttpServlet {
 		String nombre = request.getParameter("Nombre");
 		String run = request.getParameter("run");
 		String fechaNacimiento = request.getParameter("Fecha");
-		//String rut = request.getParameter("rut");
-		//int edad = Integer.parseInt(request.getParameter("edad"));
-		//String apellidos = request.getParameter("apellidos");
-		//String telefono = request.getParameter("telefono");
-		//String afp = request.getParameter("afp");
-		//String direccion = request.getParameter("direccion");
-		//String comuna = request.getParameter("comuna");
+		String rut = request.getParameter("rut");
+		int edad = Integer.parseInt(request.getParameter("edad"));
+		String apellidos = request.getParameter("apellidos");
+		String telefono = request.getParameter("telefono");
+		String afp = request.getParameter("afp");
+		String direccion = request.getParameter("direccion");
+		String comuna = request.getParameter("comuna");
 		String area = request.getParameter("area");
 		String experienciaPrevia = request.getParameter("expPrevia");
 		//String titulo = request.getParameter("titulo");
@@ -63,8 +63,22 @@ public class ServletCrearUsuario extends HttpServlet {
 			case "2":
 				break;
 			case "3":
-				
-				break;
+				System.out.println("en crear usuario (Cliente) Servlet");
+				Cliente cliente = new Cliente();
+				cliente.setNombre(nombre);
+				cliente.setRun(run);
+				cliente.setFechaNacimiento(fechaNacimiento);
+				cliente.setRut(rut);
+				cliente.setEdad(edad);
+				cliente.setApellidos(apellidos);
+				cliente.setTelefono(telefono);
+				cliente.setAfp(afp);
+				cliente.setDireccion(direccion);
+				cliente.setComuna(comuna);
+				ClienteControlador clienteControlador = new ClienteControlador();
+				clienteControlador.crearCliente(cliente);
+				response.sendRedirect("ServletListarUsuarios");
+			break;
 			
 		}
 		

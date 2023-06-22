@@ -10,9 +10,7 @@ public class Cliente extends Usuario {
 
 	// se crea los metodos getters y setters
 
-	public String getRut() {
-		return rut;
-	}
+	
 
 	public Cliente(int id, String run, String rut, int edad, String nombre, String apellidos, String telefono, String afp,
 			String direccion, String comuna, String fechaNacimiento) {
@@ -28,6 +26,9 @@ public class Cliente extends Usuario {
 
 	public Cliente() {
 		// TODO Auto-generated constructor stub
+	}
+	public String getRut() {
+		return rut;
 	}
 
 	public void setRut(String rut) {

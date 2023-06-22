@@ -2,6 +2,7 @@ package service;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -39,7 +40,7 @@ public class ClienteService {
 				String comuna = rs.getString("comuna");
 				Cliente cliente = new Cliente(id,run,rut,edad,nombre,apellidos,telefono,afp,direccion,comuna,fechaNacimiento);
 				clientes.add(cliente);
-				// System.out.println(students);
+				
 			}
 
 		} catch (Exception e) {
@@ -47,4 +48,48 @@ public class ClienteService {
 		}
 		return clientes;
 	}
+	public Cliente crearCliente(Cliente cliente) {
+		DBConnection conexion = DBConnection.getInstance();
+		System.out.println("Dentro de ClienteService");
+		String sqlUsuario = "INSERT INTO usuario (nombre, run, fecha_nacimiento) "
+				+ "VALUES (?, ?, ?)";
+		
+		String sqlCliente = "INSERT INTO cliente (id_usuario, rut, edad, apellido, telefono, afp, direccion, comuna) VALUES (?,?, ?,?,?,?,?,?)";
+				
+				
+		try {
+			
+			PreparedStatement usuarioStatement = conexion.getConnection().prepareStatement(sqlUsuario, Statement.RETURN_GENERATED_KEYS);
+			usuarioStatement.setString(1, cliente.getNombre());
+			usuarioStatement.setString(2, cliente.getRun());
+			usuarioStatement.setString(3, cliente.getFechaNacimiento());
+			usuarioStatement.executeUpdate();
+			
+			
+			ResultSet generatedKeys = usuarioStatement.getGeneratedKeys();
+			
+			int idUsuario = -1;
+			if (generatedKeys.next()) {
+				idUsuario = generatedKeys.getInt(1);
+			}
+			
+			PreparedStatement clienteStatement = conexion.getConnection().prepareStatement(sqlCliente);
+			clienteStatement.setInt(1, idUsuario);
+            clienteStatement.setString(2, cliente.getRut());
+            clienteStatement.setInt(3, cliente.getEdad());
+            clienteStatement.setString(4, cliente.getApellidos());
+            clienteStatement.setString(5, cliente.getTelefono());
+           	clienteStatement.setString(6, cliente.getAfp());
+            clienteStatement.setString(7, cliente.getDireccion());
+            clienteStatement.setString(8,cliente.getComuna());
+            clienteStatement.executeUpdate();
+		
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}	
+		return cliente;	
+	
+	}
 }
+
+

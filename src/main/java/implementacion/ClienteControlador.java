@@ -18,8 +18,10 @@ public class ClienteControlador implements IClienteControlador{
 
 	@Override
 	public Cliente crearCliente(Cliente cliente) {
-		// TODO Auto-generated method stub
-		return null;
+		return clienteService.crearCliente(cliente);
+		
 	}
+
+	
 	
 }
