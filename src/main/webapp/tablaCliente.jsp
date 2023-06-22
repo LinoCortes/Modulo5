@@ -37,6 +37,10 @@
 			<td><%=s.getAfp()%></td>
 			<td><%=s.getDireccion()%></td>
 			<td><%=s.getComuna()%></td>
+			 <td>
+               <a class="text-success" href="ServletCrudUsuario?option=formUpdateStudent&idStudent=<%=s.getId()%>"><i class="fa-solid fa-pen-to-square mx-3"></i></a>	 
+               <a class="text-danger" href="ServlettCrudStudent?option=deleteStudent&idStudent=<%=s.getId()%>"><i class="fa-solid fa-trash"></i></a>
+             </td>
 		</tr>
 		<%
 		}

@@ -6,6 +6,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import conexion.DBConnection;
 import modelo.Administrativo;
 
@@ -89,6 +90,34 @@ public class AdministrativoService {
 		return administrativo;	
 		
 	}
+	
+	 public Administrativo findByIdAdministrativo(int id) {
+		    
+		    Administrativo administrativo = null;
+		    String sql = "SELECT * FROM administrativo WHERE id = ?";
+		    
+		    try {
+		      
+		      PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
+		      statement.setInt(1, id);
+		      ResultSet rs = statement.executeQuery();
+		      
+		      if(rs.next()) {
+		        String nombre = rs.getString("nombre");
+		        String run = rs.getString("run");
+		        String fechaNacimiento = rs.getString("fecha_nacimiento");
+		        String area = rs.getString("area");
+		        String expPrevia = rs.getString("exp_previa");
+		        
+		        administrativo = new Administrativo(id, nombre, run, fechaNacimiento,area,expPrevia );
+		        
+		      }
+		    } catch (Exception e) {
+		      System.out.println(e.getMessage());
+		    }
+		    
+		    return administrativo;
+		  }
 	
 }
 

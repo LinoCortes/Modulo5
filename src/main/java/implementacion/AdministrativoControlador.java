@@ -2,6 +2,7 @@ package implementacion;
 
 import java.util.List;
 
+
 import interfaces.IAdministrativoControlador;
 import modelo.Administrativo;
 import service.AdministrativoService;
@@ -20,6 +21,11 @@ public class AdministrativoControlador implements IAdministrativoControlador{
 		return administrativoService.crearAdministrativo(administrativo);
 		
 	}
+
+	@Override
+	  public  Administrativo findByIdAdministrativo(int id) {
+	    return administrativoService.findByIdAdministrativo(id);
+	  }
 
 	
 }

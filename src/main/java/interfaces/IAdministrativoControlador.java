@@ -7,4 +7,6 @@ public interface IAdministrativoControlador {
 	public List<Administrativo> findAllAdministrativos();
 	
 	public Administrativo crearAdministrativo(Administrativo administrativo);
+
+	Administrativo findByIdAdministrativo(int id);
 }

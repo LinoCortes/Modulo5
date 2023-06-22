@@ -27,6 +27,10 @@
 			<td><%=s.getFechaNacimiento()%></td>
 			<td><%=s.getTitulo()%></td>
 			<td><%=s.getFechaIngreso()%></td>
+			 <td>
+               <a class="text-success" href="ServletCrudUsuario?option=formUpdateStudent&idStudent=<%=s.getId()%>"><i class="fa-solid fa-pen-to-square mx-3"></i></a>	 
+               <a class="text-danger" href="ServlettCrudStudent?option=deleteStudent&idStudent=<%=s.getId()%>"><i class="fa-solid fa-trash"></i></a>
+             </td>
 		</tr>
 		<%
 		}
