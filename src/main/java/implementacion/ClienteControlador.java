@@ -21,6 +21,12 @@ public class ClienteControlador implements IClienteControlador{
 		return clienteService.crearCliente(cliente);
 		
 	}
+	
+	@Override
+	public Cliente findClienteById(int id) {
+		// TODO Auto-generated method stub
+		return clienteService.findClienteById(id);
+	}
 
 	
 	

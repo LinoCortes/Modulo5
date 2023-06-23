@@ -50,7 +50,8 @@ public class ServletCrearUsuario extends HttpServlet {
     			administrativo.setFechaNacimiento(fechaNacimiento);
     			administrativo.setArea(area);
     			administrativo.setExperienciaPrevia(experienciaPrevia);
-				AdministrativoControlador administrativoControlador = new AdministrativoControlador();
+				System.out.println(administrativo.toString());
+    			AdministrativoControlador administrativoControlador = new AdministrativoControlador();
 				administrativoControlador.crearAdministrativo(administrativo);
 				response.sendRedirect("ServletListarUsuarios");
 			break;

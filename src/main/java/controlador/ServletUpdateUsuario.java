@@ -6,10 +6,13 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import implementacion.AdministrativoControlador;
+import implementacion.ClienteControlador;
 import modelo.Administrativo;
+import modelo.Cliente;
 import modelo.Profesional;
-import service.AdministrativoService;
-import service.ProfesionalService;
+import implementacion.ProfesionalControlador;
 
 /**
  * Servlet implementation class ServletUpdateUsuario
@@ -28,17 +31,22 @@ public class ServletUpdateUsuario extends HttpServlet {
 		switch (option) {
 
 		case "formUpdateAdministrativo":
-			AdministrativoService administrativoService = new AdministrativoService();
-			Administrativo administrativo = administrativoService.findAdministrativoById(id);
+			AdministrativoControlador administrativoControlador = new AdministrativoControlador();
+			Administrativo administrativo = administrativoControlador.findAdministrativoById(id);
 			request.setAttribute("administrativo", administrativo);
 			url = "updateAdministrativo.jsp";
 			break;
 		case "formUpdateProfesional":
-			ProfesionalService profesionalService = new ProfesionalService();
-			Profesional profesional = profesionalService.findProfesionalById(id);
+			ProfesionalControlador profesionalControlador = new ProfesionalControlador();
+			Profesional profesional = profesionalControlador.findProfesionalById(id);
 			request.setAttribute("profesional",profesional);
 			url = "updateProfesional.jsp";
 			break;
+		case "formUpdateCliente":
+			ClienteControlador clienteControlador = new ClienteControlador();
+			Cliente cliente = clienteControlador.findClienteById(id);
+			request.setAttribute("cliente", cliente);
+			url = "updateCliente.jsp";
 		}
 
 		request.getRequestDispatcher(url).forward(request, response);

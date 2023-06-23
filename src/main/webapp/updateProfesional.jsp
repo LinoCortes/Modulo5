@@ -14,7 +14,7 @@
 <body>
 <body class="fondo">
 	<!-- Navbar -->
-	<jsp:include page="navbarLogin.jsp" />
+	<jsp:include page="resources/navbarLogin.jsp" />
 	<!-- End Navbar -->
 	<div class="container mt-5">
 		<h1 class="text-center">Profesional</h1>

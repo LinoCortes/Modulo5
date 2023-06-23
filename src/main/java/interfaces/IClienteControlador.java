@@ -9,4 +9,6 @@ public interface IClienteControlador {
 	public List<Cliente> findAllClientes();
 	
 	public Cliente crearCliente(Cliente cliente);
+
+	public Cliente findClienteById(int id);
 }

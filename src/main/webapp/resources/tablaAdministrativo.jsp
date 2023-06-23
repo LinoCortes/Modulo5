@@ -28,7 +28,7 @@
 			<td><%=s.getArea()%></td>
 			<td><%=s.getExperienciaPrevia()%></td>
 			 <td>
-               <a class="text-success" href="ServletUpdateAdministrativo?option=formUpdateAdministrativo&id=<%=s.getId()%>"><i class="fa-solid fa-pen-to-square mx-3"></i></a>	 
+               <a class="text-success" href="ServletUpdateUsuario?option=formUpdateAdministrativo&id=<%=s.getId()%>"><i class="fa-solid fa-pen-to-square mx-3"></i></a>	 
              </td>
 		</tr>
 		<%

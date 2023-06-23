@@ -38,7 +38,7 @@
 			<td><%=s.getDireccion()%></td>
 			<td><%=s.getComuna()%></td>
 			 <td>
-               <a class="text-success" href="ServletUpdateCliente?option=formUpdateUsuario&id=<%=s.getId()%>"><i class="fa-solid fa-pen-to-square mx-3"></i></a>	 
+               <a class="text-success" href="ServletUpdateUsuario?option=formUpdateCliente&id=<%=s.getId()%>"><i class="fa-solid fa-pen-to-square mx-3"></i></a>	 
              </td>
 		</tr>
 		<%

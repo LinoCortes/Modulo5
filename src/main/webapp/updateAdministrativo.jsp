@@ -14,7 +14,7 @@
 <body>
 <body class="fondo">
 	<!-- Navbar -->
-	<jsp:include page="navbarLogin.jsp" />
+	<jsp:include page="resources/navbarLogin.jsp" />
 	<!-- End Navbar -->
 	<div class="container mt-5">
 		<h1 class="text-center">Administrativo</h1>
@@ -24,7 +24,7 @@
 				<%
 				Administrativo administrativo = (Administrativo) request.getAttribute("administrativo");
 				%>
-				<form class="fondo-form" action="ServletCrudUsuario" method="POST"
+				<form class="fondo-form" action="ServletUpdateUsuario" method="POST"
 					id="form-update-administrativo">
 					<div class="mb-3">
 						<label for="id" class="form-label">ID del usuario</label> <input
@@ -62,7 +62,7 @@
 							value="<%=administrativo.getExperienciaPrevia()%>" required />
 					</div>
 
-					<input type="hidden" name="option" value="updateProfesional">
+					<input type="hidden" name="option" value="updateAdministrativo">
 					<div class="d-grid gap-2">
 						<button type="submit" href="" class="btn btn-success">Actualizar</button>
 					</div>
