@@ -60,11 +60,11 @@
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="runlabel">Run</label> <input
-							type="text" class="form-control" id="run" name="run">
+							type="text" placeholder="numérico, sin puntos, guión ni dv" class="form-control" id="run" name="run">
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="fechanacimientolabel">Fecha
-							de nacimiento</label> <input type="number" class="form-control"
+							de nacimiento</label> <input type="date" class="form-control"
 							id="fechanacimiento" name="fecha_nacimiento">
 					</div>
 					<div class="mb-3">
@@ -82,7 +82,7 @@
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="edadlabel">Edad</label> <input
-							type="text" class="form-control" id="edad" name="edad">
+							type="number" placeholder="Numérico" class="form-control" id="edad" name="edad">
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="apellidoslabel">Apellidos</label> <input
@@ -110,7 +110,7 @@
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="fechaingresolabel">Fecha de
-							Ingreso</label> <input type="text" class="form-control" id="fechaingreso"
+							Ingreso</label> <input type="date" class="form-control" id="fechaingreso"
 							name="fecha_ingreso">
 					</div>
 					<div class="d-grid gap-2 pt-4">

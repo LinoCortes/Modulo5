@@ -43,8 +43,9 @@
 					</div>
 
 					<div class="mb-3">
-						<label for="fecha_nacimiento" class="form-label">Fecha nacimiento</label> 
-						<input type="text" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento" value="<%=cliente.getFechaNacimiento()%>" required />
+						<label for="fecha_nacimiento" class="form-label">Fecha nacimiento</label> <input type="date" class="form-control" id="fecha_nacimiento"
+							name="fecha_nacimiento" value="<%=cliente.getFechaNacimiento()%>"
+							required />
 					</div>
 					<div class="mb-3">
 						<label for="rut" class="form-label">RUT</label> 

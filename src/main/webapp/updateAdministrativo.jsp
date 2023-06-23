@@ -46,7 +46,7 @@
 
 					<div class="mb-3">
 						<label for="fecha_nacimiento" class="form-label">Fecha
-							Nacimiento</label> <input type="text" class="form-control"
+							Nacimiento</label> <input type="date" class="form-control"
 							id="fecha_nacimiento" name="fecha_nacimiento"
 							value="<%=administrativo.getFechaNacimiento()%>" required />
 					</div>
