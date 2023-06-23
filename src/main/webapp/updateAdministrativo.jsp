@@ -62,7 +62,7 @@
 							value="<%=administrativo.getExperienciaPrevia()%>" required />
 					</div>
 
-					<input type="hidden" name="option" value="updateStudent">
+					<input type="hidden" name="option" value="updateProfesional">
 					<div class="d-grid gap-2">
 						<button type="submit" href="" class="btn btn-success">Actualizar</button>
 					</div>

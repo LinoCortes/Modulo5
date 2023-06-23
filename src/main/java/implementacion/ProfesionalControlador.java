@@ -21,4 +21,9 @@ public class ProfesionalControlador implements IProfesionalControlador{
 		
 	}
 	
+	@Override 
+	public Profesional findProfesionalById(int id) {
+		return profesionalService.findProfesionalById(id);
+	}
+	
 }

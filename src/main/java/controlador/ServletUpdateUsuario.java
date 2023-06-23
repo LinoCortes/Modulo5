@@ -7,30 +7,37 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import modelo.Administrativo;
+import modelo.Profesional;
 import service.AdministrativoService;
+import service.ProfesionalService;
 
 /**
  * Servlet implementation class ServletUpdateUsuario
  */
-@WebServlet("/ServletUpdateAdministrativo")
-public class ServletUpdateAdministrativo extends HttpServlet {
+@WebServlet("/ServletUpdateUsuario")
+public class ServletUpdateUsuario extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	protected void service(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
 		String url = "index.jsp";
-		AdministrativoService administrativoService = new AdministrativoService();
 		String option = request.getParameter("option");
-
+		int id = Integer.parseInt(request.getParameter("id"));
+		
 		switch (option) {
 
 		case "formUpdateAdministrativo":
-			int id = Integer.parseInt(request.getParameter("id"));
-			// llamar al controlador
+			AdministrativoService administrativoService = new AdministrativoService();
 			Administrativo administrativo = administrativoService.findAdministrativoById(id);
 			request.setAttribute("administrativo", administrativo);
 			url = "updateAdministrativo.jsp";
+			break;
+		case "formUpdateProfesional":
+			ProfesionalService profesionalService = new ProfesionalService();
+			Profesional profesional = profesionalService.findProfesionalById(id);
+			request.setAttribute("profesional",profesional);
+			url = "updateProfesional.jsp";
 			break;
 		}
 
