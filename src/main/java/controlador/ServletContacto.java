@@ -26,8 +26,13 @@ public class ServletContacto extends HttpServlet {
     }
     
     protected void service(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    	System.out.println("Dentro del servlet contacto");
+    	String name = request.getParameter("name");
+    	String email = request.getParameter("email");
+    	String message = request.getParameter("message");
+    	System.out.println("Nombre: "+name+ ", Email: "+email+", Mensaje: "+message);
     	response.sendRedirect("contacto.jsp");
-	}
+    }
 		
 	
     

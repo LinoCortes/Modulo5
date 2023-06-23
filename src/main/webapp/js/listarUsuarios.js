@@ -3,6 +3,8 @@ let tablaAdministrativo = document.querySelector("#tablaAdministrativo");
 let tablaProfesional = document.querySelector("#tablaProfesional");
 let tablaCliente = document.querySelector("#tablaCliente");
 
+
+
 function onChange() {
 	let selectedOption = tipoUsuario.options[tipoUsuario.selectedIndex].text;
 	

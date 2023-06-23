@@ -44,7 +44,7 @@ public class ServletLogin extends HttpServlet {
 		if(usuario.equals("admin") && password.equals("1234")) {
 			HttpSession session = request.getSession();
 			session.setAttribute("usuario", usuario); // se anade un atributo adicional a la session que es el nombre de usuario(admi)
-			requestDispatcher = request.getRequestDispatcher("ServletContacto");
+			requestDispatcher = request.getRequestDispatcher("contacto.jsp");
 		}else {
 			requestDispatcher = request.getRequestDispatcher("login.jsp");
 		}
