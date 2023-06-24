@@ -19,6 +19,7 @@ public class AdministrativoService {
 		String sql = "SELECT usuario.id, usuario.nombre, usuario.run, usuario.fecha_nacimiento, administrativo.area, administrativo.exp_previa\r\n"
 				+ "FROM administrativo\r\n" + "INNER JOIN usuario ON usuario.id=administrativo.id_usuario;";
 
+		//LISTADO
 		try {
 
 			PreparedStatement statement = conexion.getConnection().prepareStatement(sql);
@@ -32,8 +33,7 @@ public class AdministrativoService {
 				String area = rs.getString("area");
 				String expPrevia = rs.getString("exp_previa");
 				Administrativo administrativo = new Administrativo(id, nombre, run, fechaNacimiento, area, expPrevia);
-				System.out.println("Se imprime administrativo en AdministrativoService");
-				System.out.println(administrativo.toString());
+				
 
 				administrativos.add(administrativo);
 				// System.out.println(students);
@@ -90,6 +90,7 @@ public class AdministrativoService {
 
 	}
 
+	//rescata la informacion previa al update
 	public Administrativo findAdministrativoById(int id) {
 		DBConnection conexion = DBConnection.getInstance();
 		Administrativo administrativo = new Administrativo();
@@ -119,4 +120,49 @@ public class AdministrativoService {
 		}
 		return administrativo;
 	}
+	
+	public  void updateAdministrativo(Administrativo administrativo) {
+		DBConnection conexion = DBConnection.getInstance();
+		// para generar insercion de datos a la tabla usuario
+		String sqlUsuario = "UPDATE usuario\n"
+				+ "SET nombre = ?, run = ?, fecha_nacimiento = ?\n"
+				+ "WHERE id=?";
+		// para generar la insercion de datos a la tabla administrativo
+		String sqlAdministrativo = "UPDATE administrativo SET  area = ?, exp_previa = ? WHERE id = ?";
+		System.out.println("En el service update Administrativo");
+		System.out.println(administrativo.toString());
+		try {
+			
+			PreparedStatement usuarioStatement = conexion.getConnection().prepareStatement(sqlUsuario);
+					
+			usuarioStatement.setString(1, administrativo.getNombre());
+			usuarioStatement.setString(2, administrativo.getRun());
+			usuarioStatement.setString(3, administrativo.getFechaNacimiento());
+			usuarioStatement.setInt(4, administrativo.getId());
+			usuarioStatement.executeUpdate();
+
+		
+		
+			PreparedStatement administrativoStatement = conexion.getConnection().prepareStatement(sqlAdministrativo);
+			
+			
+			administrativoStatement.setString(1, administrativo.getArea());
+			administrativoStatement.setString(2, administrativo.getExperienciaPrevia());
+			administrativoStatement.setInt(3, administrativo.getId());
+			administrativoStatement.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
+
+	
+
+	}
+	
+	
+	
+	
+	
+	
+	
+	
 }

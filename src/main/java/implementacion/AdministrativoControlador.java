@@ -21,10 +21,11 @@ public class AdministrativoControlador implements IAdministrativoControlador {
 
 	}
 	
-//	@Override
-//	public Administrativo updateAdministrativo(Administrativo administrativo) {
-//		return administrativoService.findAdministrativoById(administrativo.getId());
-//	}
+   @Override
+    public  void  updateAdministrativo(Administrativo administrativo) {
+	   administrativoService.updateAdministrativo(administrativo);
+		
+	}
 	
 	@Override
 	public Administrativo findAdministrativoById(int id) {

@@ -8,7 +8,7 @@ public class DBConnection {
   private static final String DB = "perfilusuario";
   private static final String PORT = "3306";
   private static final String LOGIN = "root";
-  private static final String PASSWORD = "Grupo7";
+  private static final String PASSWORD = "Grupal7Grupal7";
   private static final String URL_CONEXION = "jdbc:mysql://localhost:"+PORT+"/"+DB;
   // jdbc:mysql://localhost:3306/bootcamp
   

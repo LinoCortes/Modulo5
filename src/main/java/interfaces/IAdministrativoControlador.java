@@ -9,5 +9,7 @@ public interface IAdministrativoControlador {
 	public Administrativo crearAdministrativo(Administrativo administrativo);
 	
 	public Administrativo findAdministrativoById(int id);
+	
+	public void updateAdministrativo (Administrativo administrativo);
 
 }
