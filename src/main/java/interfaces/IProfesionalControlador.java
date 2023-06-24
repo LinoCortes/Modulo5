@@ -9,5 +9,7 @@ public interface IProfesionalControlador {
 	
 	public Profesional crearProfesional(Profesional profesional);
 
-	Profesional findProfesionalById(int id);
+	public Profesional findProfesionalById(int id);
+	
+	public void updateProfesional(Profesional profesional);
 }

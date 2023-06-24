@@ -117,13 +117,46 @@ public class ClienteService {
 				String afp = rs.getString("afp");
 				String direccion = rs.getString("direccion");
 				String comuna = rs.getString("comuna");
-				
-				cliente = new Cliente(id2, run, rut, edad, nombre, apellido, telefono, afp, direccion, comuna, fechaNacimiento);
+
+				cliente = new Cliente(id2, run, rut, edad, nombre, apellido, telefono, afp, direccion, comuna,
+						fechaNacimiento);
 			}
 
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}
 		return cliente;
+	}
+
+	public void updateCliente(Cliente clienteUpdate) {
+		DBConnection conexion = DBConnection.getInstance();
+		// para generar insercion de datos a la tabla usuario
+		String sqlUsuario = "UPDATE usuario SET nombre = ?, run = ?, fecha_nacimiento = ? WHERE id=?";
+		// para generar la insercion de datos a la tabla administrativo
+		String sqlCliente = "UPDATE cliente SET  rut = ?,  edad= ?, apellido= ?, direccion= ?, comuna= ?, afp= ?, telefono= ? WHERE id = ?";
+		try {
+
+			PreparedStatement usuarioStatement = conexion.getConnection().prepareStatement(sqlUsuario);
+
+			usuarioStatement.setString(1, clienteUpdate.getNombre());
+			usuarioStatement.setString(2, clienteUpdate.getRun());
+			usuarioStatement.setString(3, clienteUpdate.getFechaNacimiento());
+			usuarioStatement.setInt(4, clienteUpdate.getId());
+			usuarioStatement.executeUpdate();
+
+			PreparedStatement clienteStatement = conexion.getConnection().prepareStatement(sqlCliente);
+
+			clienteStatement.setString(1, clienteUpdate.getRut());
+			clienteStatement.setInt(2, clienteUpdate.getEdad());
+			clienteStatement.setString(3, clienteUpdate.getApellidos());
+			clienteStatement.setString(4, clienteUpdate.getDireccion());
+			clienteStatement.setString(5, clienteUpdate.getComuna());
+			clienteStatement.setString(6, clienteUpdate.getAfp());
+			clienteStatement.setString(7, clienteUpdate.getTelefono());
+			clienteStatement.setInt(8, clienteUpdate.getId());
+			clienteStatement.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }

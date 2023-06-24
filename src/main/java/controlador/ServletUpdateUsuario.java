@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
 import implementacion.AdministrativoControlador;
 import implementacion.ClienteControlador;
 import modelo.Administrativo;
@@ -27,60 +26,58 @@ public class ServletUpdateUsuario extends HttpServlet {
 
 		String url = "index.jsp";
 		String option = request.getParameter("option");
+		AdministrativoControlador administrativoControlador = new AdministrativoControlador();
+		ProfesionalControlador profesionalControlador = new ProfesionalControlador();
+		ClienteControlador clienteControlador = new ClienteControlador();
 		int id = Integer.parseInt(request.getParameter("id"));
-		 
-		
+		String nombre = request.getParameter("nombre");
+		String run = request.getParameter("run");
+		String fechaNacimiento = request.getParameter("fecha_nacimiento");
+
 		switch (option) {
-		
 
 		case "formUpdateAdministrativo":
-			AdministrativoControlador administrativoControlador = new AdministrativoControlador();
 			Administrativo administrativo = administrativoControlador.findAdministrativoById(id);
 			request.setAttribute("administrativo", administrativo);
 			url = "updateAdministrativo.jsp";
 			break;
 		case "formUpdateProfesional":
-			ProfesionalControlador profesionalControlador = new ProfesionalControlador();
 			Profesional profesional = profesionalControlador.findProfesionalById(id);
-			request.setAttribute("profesional",profesional);
+			request.setAttribute("profesional", profesional);
 			url = "updateProfesional.jsp";
 			break;
 		case "formUpdateCliente":
-			ClienteControlador clienteControlador = new ClienteControlador();
 			Cliente cliente = clienteControlador.findClienteById(id);
 			request.setAttribute("cliente", cliente);
 			url = "updateCliente.jsp";
-		case "updateAdministrativo":{
-			System.out.println("Dentro case updateAdministrativo");
-			 AdministrativoControlador administrativoControlador1 = new AdministrativoControlador();
-	        // toda la logica para actualizar al estudiante
-	        int idAdministrativo = Integer.parseInt(request.getParameter("id"));
-	        String nombre = request.getParameter("nombre");
-	        String run = request.getParameter("run");
-	        String fechaNacimiento  = request.getParameter("fecha_nacimiento");
-	        String area  = request.getParameter("area");
-	        String expPrevia  = request.getParameter("exp_previa");
-	        
-	        Administrativo administrativoUpdate = new Administrativo(idAdministrativo, nombre, run, fechaNacimiento, area, expPrevia);
-	        // llamar al controlador
-	       
-			administrativoControlador1.updateAdministrativo(administrativoUpdate);
-	        url = "ServletListarUsuarios";
-	       
-	        break;
-	    
-	   
-	     }
-	        
-	        
-	        
-	        
-	        
-	      }
-		
+			break;
+		case "updateAdministrativo":
+			String area = request.getParameter("area");
+			String expPrevia = request.getParameter("exp_previa");
+			Administrativo administrativoUpdate = new Administrativo(id, nombre, run, fechaNacimiento, area, expPrevia);
+			administrativoControlador.updateAdministrativo(administrativoUpdate);
+			url = "ServletListarUsuarios";
+			break;
+		case "updateProfesional":
+			String titulo = request.getParameter("titulo");
+			String fechaIngreso = request.getParameter("fecha_ingreso");
+			Profesional profesionalUpdate = new Profesional(id, nombre, run, fechaNacimiento, titulo, fechaIngreso);
+			profesionalControlador.updateProfesional(profesionalUpdate);
+			url = "ServletListarUsuarios";
+			break;
+		case "updateCliente":
+			String rut = request.getParameter("rut");
+			int edad = Integer.parseInt(request.getParameter("edad"));
+			String apellido = request.getParameter("apellido");
+			String telefono = request.getParameter("telefono");
+			String afp = request.getParameter("afp");
+			String direccion = request.getParameter("direccion");
+			String comuna = request.getParameter("comuna");
+			Cliente clienteUpdate = new Cliente(id,run,rut,edad,nombre,apellido,telefono,afp,direccion,comuna,fechaNacimiento);
+			clienteControlador.updateCliente(clienteUpdate);
+			url = "ServletListarUsuarios";
+			break;
 		}
-		
-
 		request.getRequestDispatcher(url).forward(request, response);
 	}
 }

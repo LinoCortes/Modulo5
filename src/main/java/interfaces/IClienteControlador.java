@@ -11,4 +11,6 @@ public interface IClienteControlador {
 	public Cliente crearCliente(Cliente cliente);
 
 	public Cliente findClienteById(int id);
+
+	public void updateCliente(Cliente clienteUpdate);
 }

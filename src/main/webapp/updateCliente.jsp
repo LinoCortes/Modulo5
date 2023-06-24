@@ -17,7 +17,7 @@
 	<jsp:include page="resources/navbarLogin.jsp" />
 	<!-- End Navbar -->
 	<div class="container mt-5">
-		<h1 class="text-center">Profesional</h1>
+		<h1 class="text-center">Cliente</h1>
 
 		<div class="row mt-5">
 			<div class="col-4 offset-4">

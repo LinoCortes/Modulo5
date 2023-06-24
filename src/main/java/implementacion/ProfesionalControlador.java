@@ -3,6 +3,7 @@ package implementacion;
 import java.util.List;
 
 import interfaces.IProfesionalControlador;
+import modelo.Cliente;
 import modelo.Profesional;
 import service.ProfesionalService;
 
@@ -24,6 +25,11 @@ public class ProfesionalControlador implements IProfesionalControlador{
 	@Override 
 	public Profesional findProfesionalById(int id) {
 		return profesionalService.findProfesionalById(id);
+	}
+	
+	@Override
+	public void updateProfesional(Profesional profesionalUpdate) {
+		profesionalService.updateProfesional(profesionalUpdate);
 	}
 	
 }

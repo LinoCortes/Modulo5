@@ -82,8 +82,7 @@ public class ProfesionalService {
 		DBConnection conexion = DBConnection.getInstance();
 		Profesional profesional = new Profesional();
 		String sql = "SELECT usuario.id, usuario.nombre, usuario.run, usuario.fecha_nacimiento, profesional.titulo, profesional.fecha_ingreso\r\n"
-				+ "FROM profesional\r\n"
-				+ "INNER JOIN usuario ON usuario.id=profesional.id_usuario\r\n"
+				+ "FROM profesional\r\n" + "INNER JOIN usuario ON usuario.id=profesional.id_usuario\r\n"
 				+ "WHERE profesional.id_usuario=?;";
 
 		try {
@@ -107,5 +106,32 @@ public class ProfesionalService {
 			System.out.println(e.getMessage());
 		}
 		return profesional;
+	}
+
+	public void updateProfesional(Profesional profesionalUpdate) {
+		DBConnection conexion = DBConnection.getInstance();
+		// para generar insercion de datos a la tabla usuario
+		String sqlUsuario = "UPDATE usuario\n" + "SET nombre = ?, run = ?, fecha_nacimiento = ?\n" + "WHERE id=?";
+		// para generar la insercion de datos a la tabla administrativo
+		String sqlAdministrativo = "UPDATE profesional SET  titulo = ?, fecha_ingreso = ? WHERE id = ?";
+		try {
+
+			PreparedStatement usuarioStatement = conexion.getConnection().prepareStatement(sqlUsuario);
+
+			usuarioStatement.setString(1, profesionalUpdate.getNombre());
+			usuarioStatement.setString(2, profesionalUpdate.getRun());
+			usuarioStatement.setString(3, profesionalUpdate.getFechaNacimiento());
+			usuarioStatement.setInt(4, profesionalUpdate.getId());
+			usuarioStatement.executeUpdate();
+
+			PreparedStatement administrativoStatement = conexion.getConnection().prepareStatement(sqlAdministrativo);
+
+			administrativoStatement.setString(1, profesionalUpdate.getTitulo());
+			administrativoStatement.setString(2, profesionalUpdate.getFechaIngreso());
+			administrativoStatement.setInt(3, profesionalUpdate.getId());
+			administrativoStatement.executeUpdate();
+		} catch (Exception e) {
+			System.out.println(e.getMessage());
+		}
 	}
 }

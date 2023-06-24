@@ -64,7 +64,7 @@
 
 					<input type="hidden" name="option" value="updateAdministrativo">
 					<div class="d-grid gap-2">
-						<button type="submit" href="" class="btn btn-success">Actualizar</button>
+						<button type="submit" action="" class="btn btn-success">Actualizar</button>
 					</div>
 
 				</form>

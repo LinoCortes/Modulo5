@@ -1,7 +1,6 @@
 package implementacion;
 
 import java.util.List;
-
 import interfaces.IClienteControlador;
 import modelo.Cliente;
 import service.ClienteService;
@@ -12,7 +11,6 @@ public class ClienteControlador implements IClienteControlador{
 	
 	@Override
 	public List<Cliente> findAllClientes() {
-		// TODO Auto-generated method stub
 		return clienteService.findAllClientes();
 	}
 
@@ -24,10 +22,11 @@ public class ClienteControlador implements IClienteControlador{
 	
 	@Override
 	public Cliente findClienteById(int id) {
-		// TODO Auto-generated method stub
 		return clienteService.findClienteById(id);
 	}
-
 	
-	
+	@Override
+	public void updateCliente(Cliente clienteUpdate) {
+		clienteService.updateCliente(clienteUpdate);
+	}
 }
