@@ -56,62 +56,62 @@
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="nombrelabel">Nombre</label> <input
-							type="text" class="form-control" id="nombre" name="nombre">
+							type="text" class="form-control" id="nombre" name="nombre" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="runlabel">Run</label> <input
-							type="text" placeholder="numérico, sin puntos, guión ni dv" class="form-control" id="run" name="run">
+							type="text" placeholder="numérico, sin puntos, guión ni dv" class="form-control" id="run" name="run" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="fechanacimientolabel">Fecha
 							de nacimiento</label> <input type="date" class="form-control"
-							id="fechanacimiento" name="fecha_nacimiento">
+							id="fechanacimiento" name="fecha_nacimiento" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="arealabel">Área</label> <input
-							type="text" class="form-control" id="area" name="area">
+							type="text" class="form-control" id="area" name="area" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="expprevialabel">Experiencia
 							Previa</label> <input type="text" class="form-control" id="expprevia"
-							name="exp_previa">
+							name="exp_previa" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="rutlabel">Rut</label> <input
-							type="text" class="form-control" id="rut" name="rut">
+							type="text" class="form-control" id="rut" name="rut" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="edadlabel">Edad</label> <input
-							type="number" placeholder="Numérico" class="form-control" id="edad" name="edad">
+							type="number" placeholder="Numérico" class="form-control" id="edad" name="edad" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="apellidoslabel">Apellidos</label> <input
-							type="text" class="form-control" id="apellidos" name="apellidos">
+							type="text" class="form-control" id="apellidos" name="apellidos" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="telefonolabel">Teléfono</label> <input
-							type="text" class="form-control" id="telefono" name="telefono">
+							type="text" class="form-control" id="telefono" name="telefono" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="afplabel">AFP</label> <input
-							type="text" class="form-control" id="afp" name="afp">
+							type="text" class="form-control" id="afp" name="afp" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="direccionlabel">Dirección</label> <input
-							type="text" class="form-control" id="direccion" name="direccion">
+							type="text" class="form-control" id="direccion" name="direccion" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="comunalabel">Comuna</label> <input
-							type="text" class="form-control" id="comuna" name="comuna">
+							type="text" class="form-control" id="comuna" name="comuna" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="titulolabel">Titulo</label> <input
-							type="text" class="form-control" id="titulo" name="titulo">
+							type="text" class="form-control" id="titulo" name="titulo" required>
 					</div>
 					<div class="mb-3">
 						<label class="form-label" id="fechaingresolabel">Fecha de
 							Ingreso</label> <input type="date" class="form-control" id="fechaingreso"
-							name="fecha_ingreso">
+							name="fecha_ingreso" required>
 					</div>
 					<div class="d-grid gap-2 pt-4">
 						<button type="submit" class="btn btn-primary">Crear</button>

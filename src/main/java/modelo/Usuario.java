@@ -6,7 +6,6 @@ public class Usuario implements Serializable{
 	private int id;
 	private String nombre, run, fechaNacimiento;
 	
-	//se crean los constructores
 	public Usuario() {
 		
 	}
@@ -18,8 +17,6 @@ public class Usuario implements Serializable{
 		this.fechaNacimiento = fechaNacimiento;
 	}
 	
-		
-	//se crean los getters y setters.
 	public String getNombre() {
 		return nombre;
 	}
