@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 
 /**
- * Ejercicio Grupal 5 Módulo 5
+ * Ejercicio Grupal Sprint Final Módulo 5 
  * 
  * Integrantes:
  * 		Lino Cortés
