@@ -52,7 +52,6 @@ public class ClienteService {
 
 	public Cliente crearCliente(Cliente cliente) {
 		DBConnection conexion = DBConnection.getInstance();
-		System.out.println("Dentro de ClienteService");
 		String sqlUsuario = "INSERT INTO usuario (nombre, run, fecha_nacimiento) " + "VALUES (?, ?, ?)";
 
 		String sqlCliente = "INSERT INTO cliente (id_usuario, rut, edad, apellido, telefono, afp, direccion, comuna) VALUES (?,?, ?,?,?,?,?,?)";
@@ -132,8 +131,8 @@ public class ClienteService {
 		DBConnection conexion = DBConnection.getInstance();
 		// para generar insercion de datos a la tabla usuario
 		String sqlUsuario = "UPDATE usuario SET nombre = ?, run = ?, fecha_nacimiento = ? WHERE id=?";
-		// para generar la insercion de datos a la tabla administrativo
-		String sqlCliente = "UPDATE cliente SET  rut = ?,  edad= ?, apellido= ?, direccion= ?, comuna= ?, afp= ?, telefono= ? WHERE id = ?";
+		// para generar la insercion de datos a la tabla cliente
+		String sqlCliente = "UPDATE cliente SET  rut = ?,  edad= ?, apellido= ?, direccion= ?, comuna= ?, afp= ?, telefono= ? WHERE id_usuario = ?";
 		try {
 
 			PreparedStatement usuarioStatement = conexion.getConnection().prepareStatement(sqlUsuario);

@@ -62,6 +62,7 @@ public class ServletUpdateUsuario extends HttpServlet {
 			String titulo = request.getParameter("titulo");
 			String fechaIngreso = request.getParameter("fecha_ingreso");
 			Profesional profesionalUpdate = new Profesional(id, nombre, run, fechaNacimiento, titulo, fechaIngreso);
+			System.out.println(profesionalUpdate.toString());
 			profesionalControlador.updateProfesional(profesionalUpdate);
 			url = "ServletListarUsuarios";
 			break;

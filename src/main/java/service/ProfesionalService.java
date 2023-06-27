@@ -33,11 +33,7 @@ public class ProfesionalService {
 				String titulo = rs.getString("titulo");
 				String fechaIngreso = rs.getString("fecha_ingreso");
 				Profesional profesional = new Profesional(id, nombre, run, fechaNacimiento, titulo, fechaIngreso);
-				System.out.println("Se imprime profesional en ProfesionalService");
-				System.out.println(profesional.toString());
-
 				profesionales.add(profesional);
-				// System.out.println(students);
 			}
 
 		} catch (Exception e) {
@@ -113,7 +109,8 @@ public class ProfesionalService {
 		// para generar insercion de datos a la tabla usuario
 		String sqlUsuario = "UPDATE usuario\n" + "SET nombre = ?, run = ?, fecha_nacimiento = ?\n" + "WHERE id=?";
 		// para generar la insercion de datos a la tabla administrativo
-		String sqlAdministrativo = "UPDATE profesional SET  titulo = ?, fecha_ingreso = ? WHERE id = ?";
+		String sqlAdministrativo = "UPDATE profesional SET  titulo = ?, fecha_ingreso = ? WHERE id_usuario = ?";
+		
 		try {
 
 			PreparedStatement usuarioStatement = conexion.getConnection().prepareStatement(sqlUsuario);
@@ -124,12 +121,12 @@ public class ProfesionalService {
 			usuarioStatement.setInt(4, profesionalUpdate.getId());
 			usuarioStatement.executeUpdate();
 
-			PreparedStatement administrativoStatement = conexion.getConnection().prepareStatement(sqlAdministrativo);
+			PreparedStatement profesionalStatement = conexion.getConnection().prepareStatement(sqlAdministrativo);
 
-			administrativoStatement.setString(1, profesionalUpdate.getTitulo());
-			administrativoStatement.setString(2, profesionalUpdate.getFechaIngreso());
-			administrativoStatement.setInt(3, profesionalUpdate.getId());
-			administrativoStatement.executeUpdate();
+			profesionalStatement.setString(1, profesionalUpdate.getTitulo());
+			profesionalStatement.setString(2, profesionalUpdate.getFechaIngreso());
+			profesionalStatement.setInt(3, profesionalUpdate.getId());
+			profesionalStatement.executeUpdate();
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
 		}

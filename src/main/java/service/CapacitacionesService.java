@@ -36,7 +36,6 @@ public class CapacitacionesService {
 				Capacitacion capacitacion = new Capacitacion(id, identificador, duracion, cantidadAsistentes, tematica,
 						rutCliente, dia, hora, lugar);
 				capacitaciones.add(capacitacion);
-				// System.out.println(students);
 			}
 
 		} catch (Exception e) {

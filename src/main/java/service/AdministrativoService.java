@@ -36,7 +36,6 @@ public class AdministrativoService {
 				
 
 				administrativos.add(administrativo);
-				// System.out.println(students);
 			}
 
 		} catch (Exception e) {
@@ -128,9 +127,7 @@ public class AdministrativoService {
 				+ "SET nombre = ?, run = ?, fecha_nacimiento = ?\n"
 				+ "WHERE id=?";
 		// para generar la insercion de datos a la tabla administrativo
-		String sqlAdministrativo = "UPDATE administrativo SET  area = ?, exp_previa = ? WHERE id = ?";
-		System.out.println("En el service update Administrativo");
-		System.out.println(administrativo.toString());
+		String sqlAdministrativo = "UPDATE administrativo SET  area = ?, exp_previa = ? WHERE id_usuario = ?";
 		try {
 			
 			PreparedStatement usuarioStatement = conexion.getConnection().prepareStatement(sqlUsuario);
