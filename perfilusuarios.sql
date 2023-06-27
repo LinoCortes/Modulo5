@@ -1,17 +1,26 @@
+
+
 create DATABASE perfilusuario;
 
 use perfilusuario;
 CREATE TABLE usuario(
 id INT AUTO_INCREMENT,
 nombre VARCHAR (100) NOT NULL,
-correo VARCHAR (100) NOT NULL,
+run VARCHAR (100) NOT NULL,
+fecha_nacimiento VARCHAR(50) NOT NULL,
 PRIMARY KEY(id)
 );
 
 CREATE TABLE cliente(
 id_cliente INT AUTO_INCREMENT,
 id_usuario INT,
+rut VARCHAR(100),
+edad INT,
+apellido VARCHAR(100),
+telefono VARCHAR(20),
+afp varchar(20),
 direccion VARCHAR(100),
+comuna VARCHAR(50), 
 PRIMARY KEY (id_cliente),
 FOREIGN KEY (id_usuario) REFERENCES usuario(id)
 );
@@ -46,10 +55,18 @@ hora VARCHAR(10),
 lugar VARCHAR(100)
 );
 
-INSERT INTO capacitaciones (identificador, duracion, cantidadAsistentes, tematica,rutCliente,dia,hora, lugar) 
-VALUES (5,2,20,'orden','1212212','lunes','15:00','Providencia');
 
-SELECT * FROM capacitaciones;
+-- Ingreso de datos a la tabla Capacitaciones
+INSERT INTO capacitaciones (identificador, duracion, cantidadAsistentes, tematica,rutCliente,dia,hora, lugar) 
+VALUES (-5,2,20,'orden','1212212','lunes','15:00','Providencia');
+-- Ingreso de datos a las tablas usuario
+INSERT INTO USUARIO (nombre,run,fecha_nacimiento) values ("Martin","1821","02/12/94");
+INSERT INTO USUARIO (nombre,run,fecha_nacimiento) values ("Pedro","1352457","02/12/94");
+INSERT INTO USUARIO (nombre,run,fecha_nacimiento) values ("Sebastian","14574475","02/12/94");
+-- Ingreso de datos para cada uno de los tipos de usuarios
+insert into profesional (id_usuario,titulo,fecha_ingreso) values (1,"Ingeniero biomolecular","14/08/11");
+insert into administrativo (id_usuario,area,exp_previa) values (2,"TI", 3);
+insert into cliente (id_usuario,rut,edad,apellido,telefono,afp,direccion,comuna) values (3,"4516",65,"Segovia","99004715","Colmena","Las perdices","La florida");
 
 
 
