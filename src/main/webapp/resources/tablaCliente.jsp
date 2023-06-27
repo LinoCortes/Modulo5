@@ -2,7 +2,8 @@
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<table id="tablaCliente" class="table table-striped">
+<div class = "table-responsive-xl">	  
+  <table id="tablaCliente" class="table table-striped">
 	<thead>
 		<tr>
 			<th scope="col">#</th>
@@ -47,4 +48,5 @@
 		%>
 		<!-- fin del for de java -->
 	</tbody>
-</table>
+  </table>
+</div>  

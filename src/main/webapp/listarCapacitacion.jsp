@@ -48,6 +48,7 @@
 				<h2 class="text-center mb-4"></h2>
 				<div class="row">
 					<div class="col-6 offset-3">
+					  <div class= "table-responsive-xl">
 						<table class="table">
 							<thead>
 								<tr>
@@ -95,6 +96,7 @@
 								%>
 							</tbody>
 						</table>
+					  </div>
 					</div>
 				</div>
 			</div>
